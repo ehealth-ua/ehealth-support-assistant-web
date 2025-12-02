@@ -33,9 +33,7 @@ export default function DocumentCard({
 
   const handleOpenDocument = () => {
     if (filePath) {
-      // Encode the path to handle Cyrillic/Unicode characters properly
-      const encodedPath = encodeURI(filePath);
-      window.open(encodedPath, '_blank');
+      window.open(filePath, '_blank');
     }
   };
 
