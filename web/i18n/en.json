@@ -1,0 +1,14 @@
+{
+  "siteTitle": "e-Health",
+  "home": "Home",
+  "registries": "Registries",
+  "documentation": "Documentation",
+  "heroTitle": "Effective Helpdesk: Documentation enhanced with AI",
+  "heroSubtitle": "Your centralized resource for quick access to documentation and AI agents' assistance",
+  "goToRegisters": "Go to registries catalog",
+  "catalogTitle": "Registries Catalog",
+  "registersNotFound": "No registries found. Check notebooks.json.",
+  "supportContact": "If users have questions, contact the help center",
+  "helpdeskButton": "Contact Helpdesk",
+  "documentationButton": "Documentation"
+}

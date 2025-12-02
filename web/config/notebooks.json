@@ -1,0 +1,121 @@
+[
+  {
+    "slug": "ekopfo",
+    "title": "ЕКОПФО",
+    "description": "Надані документи описують систему управління медичними справами пацієнтів...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю ЕКОПФО",
+        "url": "https://notebooklm.google.com/notebook/5ed43304-90a2-4193-a706-daec18cc8e33",
+        "image": "/images/ai-ekopfo.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "endoprosthesis",
+    "title": "Ендопротезування",
+    "description": "Надані документи описують електронну систему для управління чергою на ендопротезування...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю Ендопротезування",
+        "url": "https://notebooklm.google.com/notebook/2ba648ae-a69d-4912-959f-cb04d3d7e383",
+        "image": "/images/ai-endoprosthesis.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "internatura",
+    "title": "Інтернатура",
+    "description": "Надані документи стосуються української системи інтернатури для медичних і фармацевтичних спеціалістів...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю рейтингового розподілу в Інтернатуру",
+        "url": "https://notebooklm.google.com/notebook/fc75d28d-509b-47e4-a3c0-8cff2a589ce7",
+        "image": "/images/ai-internatura.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "vacancies",
+    "title": "Вакансії",
+    "description": "Надані документи надають огляд Єдиного веб-порталу вакантних посад у медичних закладах...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю Вакансій в медичних закладах",
+        "url": "https://notebooklm.google.com/notebook/e4ec4760-68d9-4ca2-a564-df02e0484ccf",
+        "image": "/images/ai-vacancies.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "bpr",
+    "title": "Система Безперервного Розвитку",
+    "description": "Надані джерела надають огляд системи безперервного професійного розвитку (БПР)...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю Безперервного Розвитку лікарів",
+        "url": "https://notebooklm.google.com/notebook/7e2d73f0-ec55-4e20-926d-0e532db34a07",
+        "image": "/images/ai-bpr.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "ekrov",
+    "title": "е-Кров",
+    "description": "Надані джерела надають огляд реалізації інформаційно-комунікаційної системи донорства крові...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю е-Кров",
+        "url": "https://notebooklm.google.com/notebook/76d8e964-6d04-4a87-8515-187b66e3e3c2",
+        "image": "/images/ai-ekrov.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  },
+  {
+    "slug": "sen-ikp",
+    "title": "СЕН ІКП",
+    "description": "Надані джерела надають інструкції користувача для Кабінету отримувача послуг системи СЕН ІКП...",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю системи Електронної нотифікації інформації про косметичну продукцію",
+        "url": "https://notebooklm.google.com/notebook/70c4d740-9fc0-4dfe-af5e-4a65a721b26b",
+        "image": "/images/ai-senikp.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://support.example.com",
+        "image": "/images/helpdesk.webp"
+      }
+    ]
+  }
+]
