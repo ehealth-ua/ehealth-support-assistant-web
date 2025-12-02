@@ -1,7 +1,84 @@
+import DocumentCard from '../../components/DocumentCard';
+
 export const metadata = {
   title: 'Загальні настанови',
   description: 'Загальні настанови для користувачів порталу'
 }
+
+interface Document {
+  title: string;
+  description?: string;
+  fileType: 'PDF' | 'DOCX' | 'XLSX' | 'IMG';
+  filePath?: string;
+  fileSize?: string;
+}
+
+// Резервні картки для майбутньої документації
+const documents: Document[] = [
+  // Рядок 1
+  {
+    title: 'Документ №1 (Резерв)',
+    description: 'Місце для майбутнього файлу PDF',
+    fileType: 'PDF',
+  },
+  {
+    title: 'Документ №2 (Резерв)',
+    description: 'Місце для майбутнього файлу DOCX',
+    fileType: 'DOCX',
+  },
+  {
+    title: 'Документ №3 (Резерв)',
+    description: 'Місце для майбутнього зображення',
+    fileType: 'IMG',
+  },
+  {
+    title: 'Документ №4 (Резерв)',
+    description: 'Місце для майбутнього файлу XLSX',
+    fileType: 'XLSX',
+  },
+  // Рядок 2
+  {
+    title: 'Документ №5 (Резерв)',
+    description: 'Місце для майбутнього файлу PDF',
+    fileType: 'PDF',
+  },
+  {
+    title: 'Документ №6 (Резерв)',
+    description: 'Місце для майбутнього файлу DOCX',
+    fileType: 'DOCX',
+  },
+  {
+    title: 'Документ №7 (Резерв)',
+    description: 'Місце для майбутнього зображення',
+    fileType: 'IMG',
+  },
+  {
+    title: 'Документ №8 (Резерв)',
+    description: 'Місце для майбутнього файлу XLSX',
+    fileType: 'XLSX',
+  },
+  // Рядок 3
+  {
+    title: 'Документ №9 (Резерв)',
+    description: 'Місце для майбутнього файлу PDF',
+    fileType: 'PDF',
+  },
+  {
+    title: 'Документ №10 (Резерв)',
+    description: 'Місце для майбутнього файлу DOCX',
+    fileType: 'DOCX',
+  },
+  {
+    title: 'Документ №11 (Резерв)',
+    description: 'Місце для майбутнього зображення',
+    fileType: 'IMG',
+  },
+  {
+    title: 'Документ №12 (Резерв)',
+    description: 'Місце для майбутнього файлу XLSX',
+    fileType: 'XLSX',
+  },
+];
 
 export default function GuidelinesPage() {
   return (
@@ -20,10 +97,18 @@ export default function GuidelinesPage() {
       </div>
       <div className="w-full px-4 py-8">
         <div className="container mx-auto">
-          <div className="prose prose-lg max-w-3xl mx-auto">
-            <p className="text-gray-600">
-              Загальні настанови для користувачів порталу е-Здоров'я розташовуються тут.
-            </p>
+          <h2 className="text-3xl font-bold text-blue-600 mb-8">Загальні настанови для користувачів порталу</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {documents.map((doc, idx) => (
+              <DocumentCard
+                key={idx}
+                title={doc.title}
+                description={doc.description}
+                fileType={doc.fileType}
+                filePath={doc.filePath}
+                fileSize={doc.fileSize}
+              />
+            ))}
           </div>
         </div>
       </div>
