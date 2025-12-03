@@ -3,7 +3,7 @@ import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import { cookies } from 'next/headers'
-import { getTranslations } from '../lib/locales'
+import { getTranslations } from '../lib/i18n'
 
 interface Registry {
   slug: string
@@ -62,7 +62,7 @@ export default async function HomePage() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {registries.map((r) => {
-                const img = r.links && r.links.length > 0 ? r.links[0].image : '/images/helpdesk.webp'
+                const img = (r.links && r.links.length > 0 && r.links[0].image) ? r.links[0].image : '/images/helpdesk.webp'
                 return (
                   <Link
                     key={r.slug}

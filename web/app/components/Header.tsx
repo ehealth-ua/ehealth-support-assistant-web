@@ -83,7 +83,7 @@ export default function Header() {
               onMouseEnter={() => setActiveDropdown('docs')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <Link href="/documentation" className="px-3 py-2 hover:text-blue-600">{t.header?.documentation || t.documentation}</Link>
+              <Link href="/documentation" className="px-3 py-2 hover:text-blue-600">{t.header?.documentation || 'Документація'}</Link>
               <div className="absolute left-0 mt-0 w-56 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
                 <Link href="/documentation/guidelines" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">{t.header?.guidelines || "Загальні настанови"}</Link>
                 <Link href="/documentation/regulatory" className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">{t.header?.regulatory || "Нормативні документи"}</Link>

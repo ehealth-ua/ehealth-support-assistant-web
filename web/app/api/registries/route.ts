@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { NextResponse } from 'next/server'
 
 interface Registry {
   slug: string
@@ -15,8 +16,8 @@ export async function GET() {
     const registries: Registry[] = JSON.parse(data)
     // Return only slug and title for header menu
     const simplified = registries.map(r => ({ slug: r.slug, title: r.title }))
-    return Response.json(simplified)
+    return NextResponse.json(simplified)
   } catch (e) {
-    return Response.json([], { status: 500 })
+    return NextResponse.json([], { status: 500 })
   }
 }
