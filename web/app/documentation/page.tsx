@@ -1,99 +1,90 @@
+"use client"
 import DocumentCard from '../components/DocumentCard';
-
-export const metadata = {
-  title: 'Документація',
-  description: 'Документація е-Здоров\'я',
-};
+import { useTranslations } from '../../lib/useTranslations';
 
 interface Document {
-  title: string;
-  description?: string;
+  key: string;
   fileType: 'PDF' | 'DOCX' | 'XLSX' | 'IMG';
   filePath?: string;
   fileSize?: string;
 }
 
-// Mock data - у майбутньому буде завантажуватися з БД або API
+// Document keys mapped to file paths
 const documents: Document[] = [
   {
-    title: 'Варіанти техніки побудови промптів',
-    description: 'Тип: PDF. Розмір: [Вкажіть розмір]',
+    key: 'promptTechniques',
     fileType: 'PDF',
     filePath: '/docs/prompt-techniques.pdf',
     fileSize: '2.5 MB',
   },
   {
-    title: 'Промптинг (Огляд)',
-    description: 'Тип: PDF. Розмір: [Вкажіть розмір]',
+    key: 'prompting',
     fileType: 'PDF',
     filePath: '/docs/prompting.pdf',
     fileSize: '1.8 MB',
   },
   {
-    title: 'Чек-лист для новостворених команд ЕК',
-    description: 'Тип: DOCX. Розмір: [Вкажіть розмір]',
+    key: 'ekTeamsChecklist',
     fileType: 'DOCX',
     filePath: '/docs/ek-teams-checklist.docx',
     fileSize: '0.5 MB',
   },
   {
-    title: 'ДЗР довідник',
-    description: 'Тип: XLSX. Розмір: [Вкажіть розмір]',
+    key: 'dzrReference',
     fileType: 'XLSX',
     filePath: '/docs/dzr-reference.xlsx',
     fileSize: '1.2 MB',
   },
   {
-    title: 'EKOPFO database model',
-    description: 'Тип: Зображення (Схема) Розмір: [Вкажіть розмір]',
+    key: 'ekopfoDatabaseModel',
     fileType: 'IMG',
     filePath: '/images/EKOPFO database model.png',
     fileSize: '0.8 MB',
   },
   {
-    title: 'Статус модель справи ЕКОПФО',
-    description: 'Тип: Зображення (Схема)',
+    key: 'statusModelCase',
     fileType: 'IMG',
     filePath: '/images/Статус модель справи ЕКОПФО.png',
     fileSize: '0.6 MB',
   },
   {
-    title: 'Статус-модель вектор',
-    description: 'Тип: Зображення (SVG-Вектор) Розмір: [Вкажіть розмір]',
+    key: 'statusModelVector',
     fileType: 'IMG',
     filePath: '/images/Статус-модель вектор.svg',
     fileSize: '0.3 MB',
   },
   {
-    title: 'Статус-модель картинка',
-    description: 'Тип: Зображення (JPG-Картинка) Розмір: [Вкажіть розмір]',
+    key: 'statusModelImage',
     fileType: 'IMG',
     filePath: '/images/Статус-модель картинка.jpg',
     fileSize: '0.7 MB',
   },
   {
-    title: 'Документ №9 (Резерв)',
-    description: 'Місце для майбутнього файлу PDF',
+    key: 'document9',
     fileType: 'PDF',
   },
   {
-    title: 'Документ №10 (Резерв)',
-    description: 'Місце для майбутнього файлу DOCX',
+    key: 'document10',
     fileType: 'DOCX',
   },
   {
-    title: 'Документ №11 (Резерв)',
-    description: 'Місце для майбутнього зображення',
+    key: 'document11',
     fileType: 'IMG',
   },
   {
-    title: 'Документ №12 (Резерв)',
-    description: 'Місце для майбутнього файлу XLSX',
+    key: 'document12',
     fileType: 'XLSX',
   },
 ];
 
 export default function DocumentationPage() {
+  const { t } = useTranslations();
+
+  const getCardTranslation = (key: string) => {
+    const cards = t.documentation?.cards as Record<string, { title: string; description: string }> | undefined;
+    return cards?.[key] || { title: key, description: '' };
+  };
+
   return (
     <>
       <div
@@ -105,23 +96,26 @@ export default function DocumentationPage() {
         }}
       >
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white text-center">Документація</h1>
+          <h1 className="text-5xl font-bold text-white text-center">{t.documentation?.title || 'Документація'}</h1>
         </div>
       </div>
       <div className="w-full px-4 py-8">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-blue-600 mb-8">Загальні матеріали та інструкції</h2>
+          <h2 className="text-3xl font-bold text-blue-600 mb-8">{t.documentation?.subtitle || 'Загальні матеріали та інструкції'}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {documents.map((doc, idx) => (
-              <DocumentCard
-                key={idx}
-                title={doc.title}
-                description={doc.description}
-                fileType={doc.fileType}
-                filePath={doc.filePath}
-                fileSize={doc.fileSize}
-              />
-            ))}
+            {documents.map((doc, idx) => {
+              const translation = getCardTranslation(doc.key);
+              return (
+                <DocumentCard
+                  key={idx}
+                  title={translation.title}
+                  description={translation.description}
+                  fileType={doc.fileType}
+                  filePath={doc.filePath}
+                  fileSize={doc.fileSize}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
