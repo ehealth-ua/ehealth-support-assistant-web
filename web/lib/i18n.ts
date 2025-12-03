@@ -10,7 +10,7 @@ export async function getTranslations(locale: string) {
     return JSON.parse(data)
   } catch (e) {
     // fallback to uk
-    const fallback = path.join(process.cwd(), 'i18n', `uk.json`)
+    const fallback = path.join(process.cwd(), 'locales', `ua.json`)
     const data = fs.readFileSync(fallback, 'utf-8')
     return JSON.parse(data)
   }

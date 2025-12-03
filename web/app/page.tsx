@@ -3,7 +3,7 @@ import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import { cookies } from 'next/headers'
-import { getTranslations } from '../lib/i18n'
+import { getTranslations } from '../lib/locales'
 
 interface Registry {
   slug: string
@@ -56,7 +56,7 @@ export default async function HomePage() {
       <div className="w-full px-4 py-8">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8 text-blue-600">{t.medicalRegistries}</h2>
-          
+
           {registries.length === 0 ? (
             <p className="text-red-600 text-center">{t.registersNotFound}</p>
           ) : (
