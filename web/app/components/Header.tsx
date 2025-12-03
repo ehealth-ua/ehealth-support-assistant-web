@@ -23,6 +23,12 @@ export default function Header() {
       .catch(err => console.error('Failed to load registries:', err))
   }, [])
 
+  // Function to get translated registry title
+  const getRegistryTitle = (registry: Registry) => {
+    const translatedTitle = t.registryCards?.[registry.slug as keyof typeof t.registryCards]
+    return translatedTitle || registry.title
+  }
+
   return (
     <header className="bg-white shadow">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -65,7 +71,7 @@ export default function Header() {
                     href={`/registers/${r.slug}`} 
                     className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 text-sm"
                   >
-                    {r.title}
+                    {getRegistryTitle(r)}
                   </Link>
                 ))}
               </div>

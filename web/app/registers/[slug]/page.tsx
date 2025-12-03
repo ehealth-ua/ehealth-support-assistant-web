@@ -1,5 +1,7 @@
 import notebooks from "../../../config/notebooks.json";
 import Image from 'next/image';
+import { cookies } from 'next/headers';
+import { getTranslations } from '../../../lib/i18n';
 
 type NotebookItem = {
   slug: string;
@@ -14,7 +16,11 @@ export function generateStaticParams() {
   return items.map((n) => ({ slug: n.slug }));
 }
 
-export default function RegisterDetail({ params }: { params: { slug: string } }) {
+export default async function RegisterDetail({ params }: { params: { slug: string } }) {
+  const c = cookies().get('NEXT_LOCALE');
+  const locale = c?.value ?? 'uk';
+  const t = await getTranslations(locale);
+  
   const items = Array.isArray(notebooks) ? (notebooks as NotebookItem[]) : [];
   const item = items.find((n) => n.slug === params.slug);
 
@@ -22,10 +28,13 @@ export default function RegisterDetail({ params }: { params: { slug: string } })
     return (
       <main style={{ padding: "24px" }}>
         <h1>Реєстр не знайдено</h1>
-        <p>Перевірте, що slug “{params.slug}” існує у web/config/notebooks.json.</p>
+        <p>Перевірте, що slug "{params.slug}" існує у web/config/notebooks.json.</p>
       </main>
     );
   }
+
+  // Get translated title from registryCards
+  const translatedTitle = t.registryCards?.[item.slug as keyof typeof t.registryCards] || item.title;
 
   return (
     <>
@@ -38,7 +47,7 @@ export default function RegisterDetail({ params }: { params: { slug: string } })
         }}
       >
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white text-center">{item.title}</h1>
+          <h1 className="text-5xl font-bold text-white text-center">{translatedTitle}</h1>
         </div>
       </div>
       <main style={{ padding: "24px" }}>
