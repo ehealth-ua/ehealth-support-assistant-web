@@ -1,4 +1,9 @@
+"use client"
+import { useTranslations } from '../../lib/useTranslations';
+
 export default function RegistersStatusPage() {
+  const { t } = useTranslations();
+
   return (
     <>
       <div
@@ -10,7 +15,7 @@ export default function RegistersStatusPage() {
         }}
       >
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white">Реєстри - Статус</h1>
+          <h1 className="text-5xl font-bold text-white">{t.registers?.title || 'Реєстри - Статус'}</h1>
         </div>
       </div>
       <div className="container mx-auto px-4 py-12">
@@ -18,7 +23,7 @@ export default function RegistersStatusPage() {
           <iframe 
             src="https://ekoppho.instatus.com" 
             className="w-full h-full" 
-            title="System Status" 
+            title={t.registers?.statusIframe || "System Status"}
             frameBorder="0"
           />
         </div>
