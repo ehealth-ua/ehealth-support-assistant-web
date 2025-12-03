@@ -1,12 +1,12 @@
 "use client"
 import { useState, useEffect } from 'react'
 
-// Import translations statically
-import ukTranslations from '../i18n/uk.json'
-import enTranslations from '../i18n/en.json'
+// Import translations statically from /locales/
+import uaTranslations from '../locales/ua.json'
+import enTranslations from '../locales/en.json'
 
-const translations: { [key: string]: typeof ukTranslations } = {
-  uk: ukTranslations,
+const translations: { [key: string]: typeof uaTranslations } = {
+  uk: uaTranslations,
   en: enTranslations
 }
 
