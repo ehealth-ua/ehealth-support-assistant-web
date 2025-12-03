@@ -64,6 +64,61 @@
     "subtitle": "API документація"
   },
 
+  "documentation": {
+    "title": "Документація",
+    "subtitle": "Загальні матеріали та інструкції",
+    "cards": {
+      "promptTechniques": {
+        "title": "Варіанти техніки побудови промптів",
+        "description": "Тип: PDF. Розмір: [Вкажіть розмір]"
+      },
+      "prompting": {
+        "title": "Промптинг (Огляд)",
+        "description": "Тип: PDF. Розмір: [Вкажіть розмір]"
+      },
+      "ekTeamsChecklist": {
+        "title": "Чек-лист для новостворених команд ЕК",
+        "description": "Тип: DOCX. Розмір: [Вкажіть розмір]"
+      },
+      "dzrReference": {
+        "title": "ДЗР довідник",
+        "description": "Тип: XLSX. Розмір: [Вкажіть розмір]"
+      },
+      "ekopfoDatabaseModel": {
+        "title": "EKOPFO database model",
+        "description": "Тип: Зображення (Схема) Розмір: [Вкажіть розмір]"
+      },
+      "statusModelCase": {
+        "title": "Статус модель справи ЕКОПФО",
+        "description": "Тип: Зображення (Схема)"
+      },
+      "statusModelVector": {
+        "title": "Статус-модель вектор",
+        "description": "Тип: Зображення (SVG-Вектор) Розмір: [Вкажіть розмір]"
+      },
+      "statusModelImage": {
+        "title": "Статус-модель картинка",
+        "description": "Тип: Зображення (JPG-Картинка) Розмір: [Вкажіть розмір]"
+      },
+      "document9": {
+        "title": "Документ №9 (Резерв)",
+        "description": "Місце для майбутнього файлу PDF"
+      },
+      "document10": {
+        "title": "Документ №10 (Резерв)",
+        "description": "Місце для майбутнього файлу DOCX"
+      },
+      "document11": {
+        "title": "Документ №11 (Резерв)",
+        "description": "Місце для майбутнього зображення"
+      },
+      "document12": {
+        "title": "Документ №12 (Резерв)",
+        "description": "Місце для майбутнього файлу XLSX"
+      }
+    }
+  },
+
   "registryCards": {
     "ekopfo": "ЕКОПФО",
     "endoprosthesis": "Ендопротезування",
