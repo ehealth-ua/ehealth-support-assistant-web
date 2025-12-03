@@ -12,6 +12,7 @@
   "helpdeskButton": "Звернутись до довідкового центру",
   "documentationButton": "Документація",
   "copyright": "eHealth Portal",
+  "medicalRegistries": "Медичні Реєстри",
 
   "header": {
     "siteTitle": "е-Здоров'я",
@@ -61,5 +62,15 @@
   "api": {
     "title": "API",
     "subtitle": "API документація"
+  },
+
+  "registryCards": {
+    "ekopfo": "ЕКОПФО",
+    "endoprosthesis": "Ендопротезування",
+    "internatura": "Інтернатура",
+    "vacancies": "Вакансії",
+    "bpr": "Система Безперервного Розвитку",
+    "ekrov": "е-Кров",
+    "sen-ikp": "СЕН ІКП"
   }
 }

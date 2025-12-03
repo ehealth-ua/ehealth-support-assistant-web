@@ -33,6 +33,12 @@ export default async function HomePage() {
   const t = await getTranslations(locale)
   const registries = await loadRegistries()
 
+  // Function to get translated registry title
+  const getRegistryTitle = (registry: Registry) => {
+    const translatedTitle = t.registryCards?.[registry.slug as keyof typeof t.registryCards]
+    return translatedTitle || registry.title
+  }
+
   return (
     <>
       <div
@@ -49,7 +55,7 @@ export default async function HomePage() {
       </div>
       <div className="w-full px-4 py-8">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8 text-blue-600">Медичні Реєстри</h2>
+          <h2 className="text-4xl font-bold text-center mb-8 text-blue-600">{t.medicalRegistries}</h2>
           
           {registries.length === 0 ? (
             <p className="text-red-600 text-center">{t.registersNotFound}</p>
@@ -66,13 +72,13 @@ export default async function HomePage() {
                     <div className="relative w-full" style={{ paddingBottom: '100%' }}>
                       <Image
                         src={img}
-                        alt={r.title}
+                        alt={getRegistryTitle(r)}
                         fill
                         className="object-cover absolute inset-0"
                       />
                     </div>
                     <div className="p-4 text-center">
-                      <h3 className="text-lg font-semibold text-blue-600">{r.title}</h3>
+                      <h3 className="text-lg font-semibold text-blue-600">{getRegistryTitle(r)}</h3>
                     </div>
                   </Link>
                 )

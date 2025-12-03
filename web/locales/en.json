@@ -12,6 +12,7 @@
   "helpdeskButton": "Contact Helpdesk",
   "documentationButton": "Documentation",
   "copyright": "eHealth Portal",
+  "medicalRegistries": "Medical Registries",
 
   "header": {
     "siteTitle": "e-Health",
@@ -61,5 +62,15 @@
   "api": {
     "title": "API",
     "subtitle": "API Documentation"
+  },
+
+  "registryCards": {
+    "ekopfo": "EKOPFO",
+    "endoprosthesis": "Endoprosthetics",
+    "internatura": "Internship",
+    "vacancies": "Vacancies",
+    "bpr": "Continuous Development System",
+    "ekrov": "e-Blood",
+    "sen-ikp": "SEN IKP"
   }
 }
