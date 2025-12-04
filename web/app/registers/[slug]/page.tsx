@@ -35,6 +35,12 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
 
   // Get translated title from registryCards
   const translatedTitle = t.registryCards?.[item.slug as keyof typeof t.registryCards] || item.title;
+  
+  // Get registry details from translations
+  const registryDetails = t.registryDetails?.[item.slug as keyof typeof t.registryDetails];
+  const translatedDescription = registryDetails?.description || item.description;
+  const translatedCommentary = registryDetails?.commentary || '';
+  const translatedAnalyticsTitle = registryDetails?.analyticsTitle || '';
 
   return (
     <>
@@ -51,16 +57,22 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
         </div>
       </div>
       <main style={{ padding: "24px" }}>
-        {item.description && <p>{item.description}</p>}
+        {translatedDescription && <p style={{ marginBottom: 24, fontSize: '1.1rem', lineHeight: 1.6 }}>{translatedDescription}</p>}
 
       <section style={{ display: "grid", gap: 24, maxWidth: 920 }}>
-        {(item.links || []).map((link) => {
+        {(item.links || []).map((link, index) => {
           const isSupport = link.label === 'Підтримка користувачів';
+          const isAnalytics = index === 0 && !isSupport; // First link is typically the analytics module
           const imgSize = isSupport ? 320 : 480;
-          // Translate "Підтримка користувачів" label using locales
-          const translatedLabel = isSupport 
-            ? (t.registryPage?.userSupport || link.label)
-            : link.label;
+          
+          // Translate labels using locales
+          let translatedLabel = link.label;
+          if (isSupport) {
+            translatedLabel = t.registryPage?.userSupport || link.label;
+          } else if (isAnalytics && translatedAnalyticsTitle) {
+            translatedLabel = translatedAnalyticsTitle;
+          }
+          
           return (
             <a
               key={link.url}
@@ -76,15 +88,22 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
               }}
             >
               <h3 style={{ marginTop: 0 }}>{translatedLabel}</h3>
-              {link.image && (
-                <Image
-                  src={link.image}
-                  alt={translatedLabel}
-                  width={imgSize}
-                  height={imgSize}
-                  style={{ objectFit: 'cover', borderRadius: 8 }}
-                />
-              )}
+              <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
+                {link.image && (
+                  <Image
+                    src={link.image}
+                    alt={translatedLabel}
+                    width={imgSize}
+                    height={imgSize}
+                    style={{ objectFit: 'cover', borderRadius: 8, flexShrink: 0 }}
+                  />
+                )}
+                {isAnalytics && translatedCommentary && (
+                  <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}>
+                    {translatedCommentary}
+                  </p>
+                )}
+              </div>
             </a>
           );
         })}

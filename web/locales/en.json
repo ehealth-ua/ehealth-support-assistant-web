@@ -139,5 +139,43 @@
     "notFound": "Registry not found",
     "checkSlug": "Check that the slug exists in web/config/notebooks.json.",
     "instructions": "Instructions"
+  },
+
+  "registryDetails": {
+    "ekopfo": {
+      "analyticsTitle": "EKOPFO Analytics Module",
+      "description": "The provided documents describe a patient medical records management system, focusing on processes related to functional status and disability assessment.",
+      "commentary": "The documents detail the roles and responsibilities of various medical professionals, including attending physicians, expert team leaders, expert team members, and medical registrars. The sources cover aspects such as case submission, editing and withdrawal, protocol and extract formation, as well as case and protocol statuses reflecting their progress in the system. Additionally, the instructions explain functions related to personal data, journal keeping, expert team schedule management, and conflict of interest resolution, providing a comprehensive description of digital document workflow in a medical institution."
+    },
+    "endoprosthesis": {
+      "analyticsTitle": "Endoprosthetics Analytics Module",
+      "description": "The provided documents describe an electronic system for managing the endoprosthetics queue.",
+      "commentary": ""
+    },
+    "internatura": {
+      "analyticsTitle": "Internship Analytics Module",
+      "description": "The provided documents relate to the Ukrainian internship system for medical and pharmaceutical specialists.",
+      "commentary": ""
+    },
+    "vacancies": {
+      "analyticsTitle": "Vacancies Analytics Module",
+      "description": "The provided documents provide an overview of the Unified Web Portal of Vacant Positions in Medical Institutions.",
+      "commentary": ""
+    },
+    "bpr": {
+      "analyticsTitle": "Continuous Development Analytics Module",
+      "description": "The provided sources provide an overview of the continuous professional development (CPD) system.",
+      "commentary": ""
+    },
+    "ekrov": {
+      "analyticsTitle": "e-Blood Analytics Module",
+      "description": "The provided sources provide an overview of the implementation of the blood donation information and communication system.",
+      "commentary": ""
+    },
+    "sen-ikp": {
+      "analyticsTitle": "SEN IKP Analytics Module",
+      "description": "The provided sources provide user instructions for the Service Recipient Cabinet of the SEN IKP system.",
+      "commentary": ""
+    }
   }
 }
