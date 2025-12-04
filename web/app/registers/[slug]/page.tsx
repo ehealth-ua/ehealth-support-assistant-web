@@ -27,8 +27,8 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
   if (!item) {
     return (
       <main style={{ padding: "24px" }}>
-        <h1>Реєстр не знайдено</h1>
-        <p>Перевірте, що slug "{params.slug}" існує у web/config/notebooks.json.</p>
+        <h1>{t.registryPage?.notFound || 'Реєстр не знайдено'}</h1>
+        <p>{t.registryPage?.checkSlug || 'Перевірте, що slug існує у web/config/notebooks.json.'}</p>
       </main>
     );
   }
@@ -57,6 +57,10 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
         {(item.links || []).map((link) => {
           const isSupport = link.label === 'Підтримка користувачів';
           const imgSize = isSupport ? 320 : 480;
+          // Translate "Підтримка користувачів" label using locales
+          const translatedLabel = isSupport 
+            ? (t.registryPage?.userSupport || link.label)
+            : link.label;
           return (
             <a
               key={link.url}
@@ -71,11 +75,11 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                 textDecoration: "none",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>{link.label}</h3>
+              <h3 style={{ marginTop: 0 }}>{translatedLabel}</h3>
               {link.image && (
                 <Image
                   src={link.image}
-                  alt={link.label}
+                  alt={translatedLabel}
                   width={imgSize}
                   height={imgSize}
                   style={{ objectFit: 'cover', borderRadius: 8 }}
@@ -88,7 +92,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
 
       {item.instructions && item.instructions.length > 0 && (
         <section style={{ marginTop: 24 }}>
-          <h2>Інструкції</h2>
+          <h2>{t.registryPage?.instructions || 'Інструкції'}</h2>
           <ul>
             {item.instructions.map((href) => (
               <li key={href}>

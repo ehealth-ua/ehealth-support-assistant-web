@@ -132,5 +132,12 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Frequently asked questions and answers are located here."
+  },
+
+  "registryPage": {
+    "userSupport": "User Support",
+    "notFound": "Registry not found",
+    "checkSlug": "Check that the slug exists in web/config/notebooks.json.",
+    "instructions": "Instructions"
   }
 }
