@@ -165,17 +165,17 @@
     "bpr": {
       "analyticsTitle": "Continuous Development Analytics Module",
       "description": "The provided sources provide an overview of the continuous professional development (CPD) system.",
-      "commentary": ""
+      "commentary": "The documents provide an overview of the electronic registration system for providers and continuous professional development (CPD) events for healthcare workers in Ukraine. The CPD system is a key tool for automating registration, monitoring, and management processes of educational activities aimed at maintaining and improving the professionalism of medical and pharmaceutical specialists."
     },
     "ekrov": {
       "analyticsTitle": "e-Blood Analytics Module",
       "description": "The provided sources provide an overview of the implementation of the blood donation information and communication system.",
-      "commentary": ""
+      "commentary": "The main purpose of creating the System is: \"ensuring convenience of blood and blood component donation for donors, simplifying blood and blood component donation procedures and increasing donor loyalty to the blood system, blood supply control, monitoring and inventory planning in blood system entities (inventory management), as well as implementing a remote communication system with donors, which should contribute to increasing volumes and ensuring sustainable supply of blood and blood components.\""
     },
     "sen-ikp": {
       "analyticsTitle": "SEN IKP Analytics Module",
       "description": "The provided sources provide user instructions for the Service Recipient Cabinet of the SEN IKP system.",
-      "commentary": ""
+      "commentary": "The strategic importance of the system lies in providing a transparent and effective mechanism for interaction between responsible persons, state market surveillance authorities, and state organizations performing toxicological control. SEN IKP is a single point for providing, accumulating, and processing mandatory information about cosmetic products placed on the Ukrainian market."
     }
   }
 }
