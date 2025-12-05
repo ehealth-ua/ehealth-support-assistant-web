@@ -86,29 +86,34 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
           }
           
           return (
-            <a
+            <div
               key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
               style={{
                 display: "block",
                 border: "1px solid #ddd",
                 borderRadius: 8,
                 padding: 16,
-                textDecoration: "none",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>{translatedLabel}</h3>
-              <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <span style={{ display: 'block', marginTop: 0, fontSize: '1.17em', fontWeight: 'bold' }}>{translatedLabel}</span>
+              </a>
+              <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', marginTop: 16 }}>
                 {link.image && (
-                  <Image
-                    src={link.image}
-                    alt={translatedLabel}
-                    width={imgSize}
-                    height={imgSize}
-                    style={{ objectFit: 'cover', borderRadius: 8, flexShrink: 0 }}
-                  />
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={link.image}
+                      alt={translatedLabel}
+                      width={imgSize}
+                      height={imgSize}
+                      style={{ objectFit: 'cover', borderRadius: 8, flexShrink: 0 }}
+                    />
+                  </a>
                 )}
                 {isAnalytics && translatedCommentary && (
                   <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}>
@@ -119,7 +124,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                   <UserSupportContent userSupportText={userSupportText} />
                 )}
               </div>
-            </a>
+            </div>
           );
         })}
       </section>

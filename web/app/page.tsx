@@ -64,23 +64,24 @@ export default async function HomePage() {
               {registries.map((r) => {
                 const img = (r.links && r.links.length > 0 && r.links[0].image) ? r.links[0].image : '/images/helpdesk.webp'
                 return (
-                  <Link
+                  <div
                     key={r.slug}
-                    href={`/registers/${r.slug}`}
                     className="block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow hover:scale-105"
                   >
-                    <div className="relative w-full" style={{ paddingBottom: '100%' }}>
-                      <Image
-                        src={img}
-                        alt={getRegistryTitle(r)}
-                        fill
-                        className="object-cover absolute inset-0"
-                      />
-                    </div>
-                    <div className="p-4 text-center">
-                      <h3 className="text-lg font-semibold text-blue-600">{getRegistryTitle(r)}</h3>
-                    </div>
-                  </Link>
+                    <Link href={`/registers/${r.slug}`} className="block">
+                      <div className="relative w-full" style={{ paddingBottom: '100%' }}>
+                        <Image
+                          src={img}
+                          alt={getRegistryTitle(r)}
+                          fill
+                          className="object-cover absolute inset-0"
+                        />
+                      </div>
+                      <div className="p-4 text-center">
+                        <span className="text-lg font-semibold text-blue-600">{getRegistryTitle(r)}</span>
+                      </div>
+                    </Link>
+                  </div>
                 )
               })}
             </div>
