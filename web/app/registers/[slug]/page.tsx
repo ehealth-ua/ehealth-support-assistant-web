@@ -63,7 +63,8 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
         {(item.links || []).map((link, index) => {
           const isSupport = link.label === 'Підтримка користувачів';
           const isAnalytics = index === 0 && !isSupport; // First link is typically the analytics module
-          const imgSize = isSupport ? 320 : 480;
+          // Analytics module images reduced by 20% (480 -> 384), support cards remain at 320
+          const imgSize = isSupport ? 320 : 384;
           
           // Translate labels using locales
           let translatedLabel = link.label;
