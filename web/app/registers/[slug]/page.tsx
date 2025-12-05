@@ -105,13 +105,13 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
               </a>
               <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', marginTop: 16 }}>
                 {link.image && (
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', flexShrink: 0, width: imgSize, height: imgSize }}>
                     <Image
                       src={link.image}
                       alt={translatedLabel}
                       width={imgSize}
                       height={imgSize}
-                      style={{ objectFit: 'cover', borderRadius: 8, flexShrink: 0 }}
+                      style={{ objectFit: 'cover', borderRadius: 8, width: '100%', height: '100%' }}
                     />
                   </a>
                 )}
