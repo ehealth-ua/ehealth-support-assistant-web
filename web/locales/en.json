@@ -149,18 +149,18 @@
     },
     "endoprosthesis": {
       "analyticsTitle": "Endoprosthetics Analytics Module",
-      "description": "The provided documents describe an electronic system for managing the endoprosthetics queue.",
-      "commentary": ""
+      "description": "The provided documents describe an electronic system for managing the queue for free endoprosthetics in Ukraine.",
+      "commentary": "The documents detail the system's purpose, user roles (such as representatives of health departments, medical institutions, and queue managers), as well as functional capabilities. The system also provides operation planning, tracking patient status in the queue, recording interaction results, and generating reports for various levels of healthcare management."
     },
     "internatura": {
       "analyticsTitle": "Internship Analytics Module",
       "description": "The provided documents relate to the Ukrainian internship system for medical and pharmaceutical specialists.",
-      "commentary": ""
+      "commentary": "The documents cover regulatory aspects, including training planning, enrollment, transfer, and expulsion of interns, as well as financial matters regarding budget and contract training. Additionally, the materials describe the functioning of the electronic rating distribution system, which ensures transparency of the admission campaign, graduate data management, application submission, vacancy review, and monitoring of the internship training process. The evaluation system and the rights and responsibilities of interns are also mentioned."
     },
     "vacancies": {
       "analyticsTitle": "Vacancies Analytics Module",
-      "description": "The provided documents provide an overview of the Unified Web Portal of Vacant Positions in Medical Institutions.",
-      "commentary": ""
+      "description": "The provided documents provide an overview of the Unified Web Portal of Vacant Positions in state and municipal healthcare institutions and the related Electronic Rating Distribution System for internship.",
+      "commentary": "The documents detail the purpose, functionality, and technical aspects of these systems, including user management, vacancy creation, application processing, and interaction with other registries. Installation, configuration, backup, and software recovery procedures are also discussed. Additionally, the sources describe user role models and legislative acts regulating the systems' operation, emphasizing their compliance with Ukrainian legislation and security standards."
     },
     "bpr": {
       "analyticsTitle": "Continuous Development Analytics Module",
