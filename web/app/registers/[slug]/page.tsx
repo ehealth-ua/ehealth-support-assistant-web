@@ -41,7 +41,16 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
   const translatedDescription = registryDetails?.description || item.description;
   const translatedCommentary = registryDetails?.commentary || '';
   const translatedAnalyticsTitle = registryDetails?.analyticsTitle || '';
-  const userSupportText = registryDetails?.userSupportText || '';
+  const userSupportText = registryDetails?.userSupportText as {
+    intro?: string;
+    chatsLabel?: string;
+    orText?: string;
+    formText?: string;
+    faqIntro?: string;
+    faqItems?: string[];
+    instructionsText?: string;
+    links?: { label: string; href: string }[];
+  } | undefined;
 
   return (
     <>
@@ -105,11 +114,38 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                     {translatedCommentary}
                   </p>
                 )}
-                {isSupport && userSupportText && (
+                {isSupport && userSupportText && typeof userSupportText === 'object' && (
                   <div 
-                    style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444', whiteSpace: 'pre-line' }}
-                    dangerouslySetInnerHTML={{ __html: userSupportText.replace(/\n/g, '<br/>') }}
-                  />
+                    style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <p style={{ margin: '0 0 8px 0' }}>{userSupportText.intro}</p>
+                    <p style={{ margin: '0 0 8px 0' }}>
+                      {userSupportText.chatsLabel}{' '}
+                      {userSupportText.links?.map((link: { label: string; href: string }, idx: number) => (
+                        <span key={idx}>
+                          {idx > 0 && ` ${userSupportText.orText} `}
+                          <a 
+                            href={link.href} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ color: '#0066cc', textDecoration: 'underline' }}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {link.label}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                    <p style={{ margin: '0 0 8px 0' }}>{userSupportText.formText}</p>
+                    <p style={{ margin: '8px 0 8px 0' }}>{userSupportText.faqIntro}</p>
+                    <ol style={{ margin: '0 0 8px 0', paddingLeft: 20 }}>
+                      {userSupportText.faqItems?.map((item: string, idx: number) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ol>
+                    <p style={{ margin: 0 }}>{userSupportText.instructionsText}</p>
+                  </div>
                 )}
               </div>
             </a>

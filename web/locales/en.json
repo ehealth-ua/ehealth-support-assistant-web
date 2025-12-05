@@ -146,7 +146,23 @@
       "analyticsTitle": "EKOPFO Analytics Module",
       "description": "The provided documents describe a patient medical records management system, focusing on processes related to functional status and disability assessment.",
       "commentary": "The documents detail the roles and responsibilities of various medical professionals, including attending physicians, expert team leaders, expert team members, and medical registrars. The sources cover aspects such as case submission, editing and withdrawal, protocol and extract formation, as well as case and protocol statuses reflecting their progress in the system. Additionally, the instructions explain functions related to personal data, journal keeping, expert team schedule management, and conflict of interest resolution, providing a comprehensive description of digital document workflow in a medical institution.",
-      "userSupportText": "If you have questions or need assistance, we offer the following support channels:\nChats: <a href=\"https://invite.viber.com/?g2=AQBtYweuL8ufrlP%2BQoyL1qS6hUzxsMxy%2BRNMmvkpfY8CVSLV9dQibZ5TT0in0XEB\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #0066cc; text-decoration: underline;\">for expert teams</a> or <a href=\"https://invite.viber.com/?g2=AQApPTQHg%2F6eXlP86lLTBzHPJaE38B67pntcg3voJhtBg4bleob%2Bf7FMHjYFmS%2BL\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #0066cc; text-decoration: underline;\">for attending physicians</a>\nSubmit a technical support request via the link\n\nWe also have ready links for answers to the most common questions:\n1. How to report errors to tech support for the EKOPFO IT system (step by step)\n2. How to create an employee electronic signature linked to a legal entity\n3. Step-by-step instructions, IT system\nOfficial User Instructions for the EKOPFO system are located here"
+      "userSupportText": {
+        "intro": "If you have questions or need assistance, we offer the following support channels:",
+        "chatsLabel": "Chats:",
+        "orText": "or",
+        "formText": "Submit a technical support request via the link",
+        "faqIntro": "We also have ready links for answers to the most common questions:",
+        "faqItems": [
+          "How to report errors to tech support for the EKOPFO IT system (step by step)",
+          "How to create an employee electronic signature linked to a legal entity",
+          "Step-by-step instructions, IT system"
+        ],
+        "instructionsText": "Official User Instructions for the EKOPFO system are located here",
+        "links": [
+          { "label": "for expert teams", "href": "https://invite.viber.com/?g2=AQBtYweuL8ufrlP%2BQoyL1qS6hUzxsMxy%2BRNMmvkpfY8CVSLV9dQibZ5TT0in0XEB" },
+          { "label": "for attending physicians", "href": "https://invite.viber.com/?g2=AQApPTQHg%2F6eXlP86lLTBzHPJaE38B67pntcg3voJhtBg4bleob%2Bf7FMHjYFmS%2BL" }
+        ]
+      }
     },
     "endoprosthesis": {
       "analyticsTitle": "Endoprosthetics Analytics Module",
