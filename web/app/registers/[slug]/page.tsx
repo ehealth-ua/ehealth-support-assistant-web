@@ -70,7 +70,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
       <main style={{ padding: "24px" }}>
         {translatedDescription && <p style={{ marginBottom: 24, fontSize: '1.1rem', lineHeight: 1.6 }}>{translatedDescription}</p>}
 
-      <section style={{ display: "grid", gap: 24, maxWidth: 920 }}>
+      <section style={{ display: "grid", gap: 24, maxWidth: 1100 }}>
         {(item.links || []).map((link, index) => {
           const isSupport = link.label === 'Підтримка користувачів';
           const isAnalytics = index === 0 && !isSupport; // First link is typically the analytics module
