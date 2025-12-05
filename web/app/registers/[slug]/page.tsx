@@ -41,6 +41,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
   const translatedDescription = registryDetails?.description || item.description;
   const translatedCommentary = registryDetails?.commentary || '';
   const translatedAnalyticsTitle = registryDetails?.analyticsTitle || '';
+  const userSupportText = registryDetails?.userSupportText || '';
 
   return (
     <>
@@ -102,6 +103,11 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                 {isAnalytics && translatedCommentary && (
                   <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}>
                     {translatedCommentary}
+                  </p>
+                )}
+                {isSupport && userSupportText && (
+                  <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444', whiteSpace: 'pre-line' }}>
+                    {userSupportText}
                   </p>
                 )}
               </div>
