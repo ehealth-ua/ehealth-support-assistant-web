@@ -106,9 +106,10 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                   </p>
                 )}
                 {isSupport && userSupportText && (
-                  <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444', whiteSpace: 'pre-line' }}>
-                    {userSupportText}
-                  </p>
+                  <div 
+                    style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444', whiteSpace: 'pre-line' }}
+                    dangerouslySetInnerHTML={{ __html: userSupportText.replace(/\n/g, '<br/>') }}
+                  />
                 )}
               </div>
             </a>
