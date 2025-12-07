@@ -234,14 +234,31 @@
         "intro": "If you have questions or need assistance, we offer the following support channels:",
         "chatsLabel": "Chats:",
         "orText": "or",
-        "formText": "Submit a technical support request via the link",
+        "formText": [
+          { "text": "Submit a technical support request " },
+          { "text": "via the link", "href": "https://e-health-ua.atlassian.net/servicedesk/customer/portal/32/group/88/create/296" }
+        ],
         "faqIntro": "We also have ready links for answers to the most common questions:",
         "faqItems": [
-          "How to report errors to tech support for the EKOPFO IT system (step by step)",
-          "How to create an employee electronic signature linked to a legal entity",
-          "Step-by-step instructions, IT system"
+          [
+            { "text": "How to " },
+            { "text": "report errors to tech support", "href": "https://moz.gov.ua/storage/uploads/e92ff528-e8e7-4c8d-88b7-d7120ddf8eb9/%D0%9D%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BF%D0%BE%D0%BC%D0%B8%D0%BB%D0%BE%D0%BA-%D1%82%D0%B5%D1%85-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D1%86%D1%96-%D0%95%D0%9A-%D0%9C%D0%9E%D0%97.pdf" },
+            { "text": " for the EKOPFO IT system (step by step)" }
+          ],
+          [
+            { "text": "How to " },
+            { "text": "create an employee electronic signature", "href": "https://moz.gov.ua/storage/uploads/d8b1f39e-c1df-4088-8636-00b1a4f091ec/%D0%95%D0%BB.%D0%BF%D1%96%D0%B4%D0%BF%D0%B8%D1%81-%D0%BF%D1%80%D0%B0%D1%86%D1%96%D0%B2%D0%BD%D0%B8%D0%BA%D0%B0-%D0%92%D0%86%D0%94-%D0%B7%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D1%83-%D1%83-%D0%9F%D1%80%D0%B8%D0%B2%D0%B0%D1%8224.pdf" },
+            { "text": " linked to a legal entity" }
+          ],
+          [
+            { "text": "Step-by-step instructions", "href": "https://moz.gov.ua/storage/uploads/c601766d-b28a-4d3f-a113-4f6b24ac63f1/%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0-%D1%96%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D1%96%D1%8F_%D0%86%D0%A2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BD%D0%B0-%D0%95%D1%82%D0%B0%D0%BF-1.docx.pdf" },
+            { "text": ", IT system" }
+          ]
         ],
-        "instructionsText": "Official User Instructions for the EKOPFO system are located here",
+        "instructionsText": [
+          { "text": "Official User Instructions for the EKOPFO system are " },
+          { "text": "located here", "href": "/documentation/guidelines" }
+        ],
         "links": [
           { "label": "for expert teams", "href": "https://invite.viber.com/?g2=AQBtYweuL8ufrlP%2BQoyL1qS6hUzxsMxy%2BRNMmvkpfY8CVSLV9dQibZ5TT0in0XEB" },
           { "label": "for attending physicians", "href": "https://invite.viber.com/?g2=AQApPTQHg%2F6eXlP86lLTBzHPJaE38B67pntcg3voJhtBg4bleob%2Bf7FMHjYFmS%2BL" }

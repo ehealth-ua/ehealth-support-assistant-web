@@ -234,14 +234,31 @@
         "intro": "Якщо у користувача виникли запитання або потрібна допомога — пропонуймо їм наступні канали звернення:",
         "chatsLabel": "У чати:",
         "orText": "або",
-        "formText": "Заповнювати заявку на технічну допомогу за посиланням",
+        "formText": [
+          { "text": "Заповнювати заявку на технічну допомогу " },
+          { "text": "за посиланням", "href": "https://e-health-ua.atlassian.net/servicedesk/customer/portal/32/group/88/create/296" }
+        ],
         "faqIntro": "Також маємо напоготові посилання для відповідей на найпоширеніші питання:",
         "faqItems": [
-          "Як надати помилки техпідтримці по ІТ системі ЕКОПФО (покроково)",
-          "Як сформувати електронний підпис працівника, прив'язаний до юридичної особи",
-          "Покрокова інструкція, IT-система"
+          [
+            { "text": "Як " },
+            { "text": "надати помилки техпідтримці", "href": "https://moz.gov.ua/storage/uploads/e92ff528-e8e7-4c8d-88b7-d7120ddf8eb9/%D0%9D%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F-%D0%BF%D0%BE%D0%BC%D0%B8%D0%BB%D0%BE%D0%BA-%D1%82%D0%B5%D1%85-%D0%BF%D1%96%D0%B4%D1%82%D1%80%D0%B8%D0%BC%D1%86%D1%96-%D0%95%D0%9A-%D0%9C%D0%9E%D0%97.pdf" },
+            { "text": " по ІТ системі ЕКОПФО (покроково)" }
+          ],
+          [
+            { "text": "Як " },
+            { "text": "сформувати електронний підпис працівника", "href": "https://moz.gov.ua/storage/uploads/d8b1f39e-c1df-4088-8636-00b1a4f091ec/%D0%95%D0%BB.%D0%BF%D1%96%D0%B4%D0%BF%D0%B8%D1%81-%D0%BF%D1%80%D0%B0%D1%86%D1%96%D0%B2%D0%BD%D0%B8%D0%BA%D0%B0-%D0%92%D0%86%D0%94-%D0%B7%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D1%83-%D1%83-%D0%9F%D1%80%D0%B8%D0%B2%D0%B0%D1%8224.pdf" },
+            { "text": ", прив'язаний до юридичної особи" }
+          ],
+          [
+            { "text": "Покрокова інструкція", "href": "https://moz.gov.ua/storage/uploads/c601766d-b28a-4d3f-a113-4f6b24ac63f1/%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0-%D1%96%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D1%96%D1%8F_%D0%86%D0%A2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BD%D0%B0-%D0%95%D1%82%D0%B0%D0%BF-1.docx.pdf" },
+            { "text": ", IT-система" }
+          ]
         ],
-        "instructionsText": "Офіційні Інструкції Користувачів системи ЕКОПФО розташовані тут",
+        "instructionsText": [
+          { "text": "Офіційні Інструкції Користувачів системи ЕКОПФО " },
+          { "text": "розташовані тут", "href": "/documentation/guidelines" }
+        ],
         "links": [
           { "label": "для експертних команд", "href": "https://invite.viber.com/?g2=AQBtYweuL8ufrlP%2BQoyL1qS6hUzxsMxy%2BRNMmvkpfY8CVSLV9dQibZ5TT0in0XEB" },
           { "label": "для лікуючих лікарів", "href": "https://invite.viber.com/?g2=AQApPTQHg%2F6eXlP86lLTBzHPJaE38B67pntcg3voJhtBg4bleob%2Bf7FMHjYFmS%2BL" }
