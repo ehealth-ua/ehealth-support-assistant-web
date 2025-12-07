@@ -19,7 +19,7 @@
     "home": "Home",
     "registries": "Registries",
     "documentation": "Documentation",
-    "aboutEHealth": "About e-Health",
+    "aboutEHealth": "UA SoE eZdorovya",
     "helpdeskTeam": "Helpdesk Team",
     "guidelines": "General Guidelines",
     "regulatory": "Regulatory Documents",
@@ -55,7 +55,7 @@
   },
 
   "ehealth": {
-    "title": "SE e-Health",
+    "title": "UA SoE eZdorovya",
     "missionTitle": "Our Mission",
     "missionText": "We stimulate the development of quality patient-centered digital services in the eHealth sector and contribute to the development of the medical IT market in Ukraine.",
     "workDirectionsTitle": "Work Directions",
