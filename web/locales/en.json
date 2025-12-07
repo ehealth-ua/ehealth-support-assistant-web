@@ -87,6 +87,33 @@
     "statusIframe": "System Status"
   },
 
+  "helpdesk": {
+    "title": "Helpdesk Team",
+    "missionTitle": "Our Mission",
+    "missionText1": "To provide quality, service-oriented technical support to users of eHealth ecosystem products and be a reliable partner for all levels of software and infrastructure support.",
+    "missionText2": "We work to ensure that every user receives fast, professional and clear assistance.",
+    "tasksTitle": "Our Main Tasks",
+    "task1Title": "1. Reception and Registration of Requests",
+    "task1Intro": "We process incoming requests from:",
+    "task1Items": [
+      "users of information portals supported by SE \"e-Health\"",
+      "developers of medical information systems (MIS)",
+      "users of the NHSU administrative panel"
+    ],
+    "task2Title": "2. Initial Assessment and Information Clarification",
+    "task2Text": "Support service specialists analyze requests, clarify details and determine the optimal solution path.",
+    "task3Title": "3. Request Routing",
+    "task3Intro": "If necessary, the request is forwarded to:",
+    "task3Items": [
+      "technical department",
+      "business analysts (L2)",
+      "other responsible teams of the eHealth ecosystem"
+    ],
+    "task4Title": "4. Support Until Full Resolution",
+    "task4Text": "We support every request at all stages - from the moment of registration to the final resolution of the issue, informing the user about the status and progress.",
+    "websiteLabel": "Our website"
+  },
+
   "api": {
     "title": "API",
     "subtitle": "API Documentation"
