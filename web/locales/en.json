@@ -54,6 +54,34 @@
     "xlsxDescription": "Reserved for future XLSX file"
   },
 
+  "ehealth": {
+    "title": "SE e-Health",
+    "missionTitle": "Our Mission",
+    "missionText": "We stimulate the development of quality patient-centered digital services in the eHealth sector and contribute to the development of the medical IT market in Ukraine.",
+    "workDirectionsTitle": "Work Directions",
+    "workDirections": [
+      "Administration and development of systems, registries and websites",
+      "Software development",
+      "IT enterprise infrastructure analysis",
+      "Consulting and training in eHealth",
+      "Data management and analytics",
+      "Cybersecurity, data protection and security testing",
+      "Architecture building for high-load systems",
+      "Development of telemedicine services in Ukraine",
+      "Project management and business analysis in e-governance"
+    ],
+    "goalsTitle": "Our Goals",
+    "goals": [
+      "Digitize the healthcare system and eliminate bureaucracy",
+      "Develop human-centered electronic services in Ukraine",
+      "Implement the philosophy of \"frugal use of taxpayer funds\" in project management",
+      "Create national-scale products that will impact future generations",
+      "Promote business environment development for creating new medical electronic services",
+      "Create space for innovation in medicine"
+    ],
+    "websiteLabel": "Our website"
+  },
+
   "registers": {
     "title": "Registries - Status",
     "statusIframe": "System Status"
