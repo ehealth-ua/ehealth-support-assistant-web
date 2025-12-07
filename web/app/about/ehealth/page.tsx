@@ -65,12 +65,12 @@ export default function EhealthPage() {
             <p className="text-gray-700">
               {content?.websiteLabel || 'Наш сайт'}:{' '}
               <a 
-                href="https://ezdorovya.ua/" 
+                href="https://ezdorovya.ua/systems-and-registers-administration" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color: '#0066cc', textDecoration: 'underline' }}
               >
-                https://ezdorovya.ua/
+                https://ezdorovya.ua/systems-and-registers-administration
               </a>
             </p>
           </div>
