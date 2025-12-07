@@ -116,6 +116,90 @@
         "title": "Document #12 (Reserved)",
         "description": "Reserved for future XLSX file"
       }
+    },
+    "generalGuidelines": {
+      "documents": {
+        "doc1": {
+          "title": "Healthcare Facility Administrator Instructions (EC)",
+          "description": "Instructions for healthcare facility administrator (expert team)"
+        },
+        "doc2": {
+          "title": "System Administrator Instructions",
+          "description": "Instructions for system administrator"
+        },
+        "doc3": {
+          "title": "Assessment Center Administrator Instructions",
+          "description": "Instructions for assessment center administrator"
+        },
+        "doc4": {
+          "title": "VLK Chairman Instructions",
+          "description": "Instructions for military medical commission chairman"
+        },
+        "doc5": {
+          "title": "Expert Team Leader Instructions (AC)",
+          "description": "Instructions for expert team leader at assessment center"
+        },
+        "doc6": {
+          "title": "Expert Team Leader Instructions",
+          "description": "Instructions for expert team leader"
+        },
+        "doc7": {
+          "title": "Deputy Healthcare Facility Director Instructions (EC)",
+          "description": "Instructions for deputy director of healthcare facility (expert team)"
+        },
+        "doc8": {
+          "title": "Deputy Healthcare Facility Director Instructions",
+          "description": "Instructions for deputy director of healthcare facility"
+        },
+        "doc9": {
+          "title": "Deputy Assessment Center Director Instructions",
+          "description": "Instructions for deputy director of assessment center"
+        },
+        "doc10": {
+          "title": "Healthcare Facility Director Instructions (EC)",
+          "description": "Instructions for director of healthcare facility (expert team)"
+        },
+        "doc11": {
+          "title": "Healthcare Facility Director Instructions",
+          "description": "Instructions for director of healthcare facility"
+        },
+        "doc12": {
+          "title": "Assessment Center Director Instructions",
+          "description": "Instructions for director of assessment center"
+        },
+        "doc13": {
+          "title": "Attending Physician Instructions",
+          "description": "Instructions for attending physician"
+        },
+        "doc14": {
+          "title": "Healthcare Facility Registrar Instructions (Physician Assistant)",
+          "description": "Instructions for healthcare facility registrar (attending physician assistant)"
+        },
+        "doc15": {
+          "title": "Authorized Law Enforcement Officers Instructions",
+          "description": "Instructions for authorized law enforcement officers (National Police-DBR-SBU-NABU)"
+        },
+        "doc16": {
+          "title": "Ministry of Health Authorized Person Instructions",
+          "description": "Instructions for Ministry of Health authorized person"
+        },
+        "doc17": {
+          "title": "Expert Team Member Instructions (AC)",
+          "description": "Instructions for expert team member at assessment center"
+        },
+        "doc18": {
+          "title": "Expert Team Member Instructions - Case Manager (AC)",
+          "description": "Instructions for expert team member responsible for case management at assessment center"
+        },
+        "doc19": {
+          "title": "Expert Team Member Instructions - Case Manager",
+          "description": "Instructions for expert team member responsible for case management"
+        },
+        "doc20": {
+          "title": "Expert Team Member Instructions",
+          "description": "Instructions for expert team member"
+        }
+      }
     }
   },
 
