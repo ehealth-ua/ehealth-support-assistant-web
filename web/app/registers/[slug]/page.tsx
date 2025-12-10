@@ -99,7 +99,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: "none", color: "inherit" }}
+                style={{ textDecoration: "underline", color: "#0066cc" }}
               >
                 <span style={{ display: 'block', marginTop: 0, fontSize: '1.17em', fontWeight: 'bold' }}>{translatedLabel}</span>
               </a>
