@@ -54,16 +54,13 @@ export default async function RegistersPage() {
       <div className="container mx-auto px-4 py-12 space-y-8">
         {/* Status Grid Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">
-            {t.registers?.statusTitle || 'Статус систем'}
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {registriesWithStatus.map((registry) => {
               const registryName = t.registryCards?.[registry.slug as keyof typeof t.registryCards] || registry.title;
               return (
                 <div key={registry.slug} className="space-y-2">
-                  <h3 className="text-xl font-semibold">{registryName}</h3>
-                  <div className="w-full h-[60vh] min-h-[400px] border rounded overflow-hidden shadow-lg">
+                  <h3 className="text-xl font-semibold text-center">{registryName}</h3>
+                  <div className="w-full h-[42vh] min-h-[280px] border rounded overflow-hidden shadow-lg">
                     <iframe 
                       src={registry.statusUrl} 
                       className="w-full h-full" 
