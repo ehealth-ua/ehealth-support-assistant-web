@@ -150,7 +150,7 @@
       },
       "statusModelVector": {
         "title": "Статус-модель процесів оскарження",
-        "description": "Тип: Зображення (SVG-Вектор)"
+        "description": "Тип: Зображення (Схема)"
       },
       "statusModelImage": {
         "title": "Статус-модель картинка",

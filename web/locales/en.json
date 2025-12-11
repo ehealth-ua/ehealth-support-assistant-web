@@ -150,7 +150,7 @@
       },
       "statusModelVector": {
         "title": "Appeal process status model",
-        "description": "Type: Image (SVG Vector)"
+        "description": "Type: Image (Schema)"
       },
       "statusModelImage": {
         "title": "Status Model Image",
