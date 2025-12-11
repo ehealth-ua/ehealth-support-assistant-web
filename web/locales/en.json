@@ -142,7 +142,7 @@
       },
       "ekopfoDatabaseModel": {
         "title": "EKOPFO database model",
-        "description": "Type: Image (Schema). Size: [Specify size]"
+        "description": "Type: Image (Schema)"
       },
       "statusModelCase": {
         "title": "Main case flow status model",
@@ -150,11 +150,11 @@
       },
       "statusModelVector": {
         "title": "Appeal process status model",
-        "description": "Type: Image (SVG Vector). Size: [Specify size]"
+        "description": "Type: Image (SVG Vector)"
       },
       "statusModelImage": {
         "title": "Status Model Image",
-        "description": "Type: Image (JPG). Size: [Specify size]"
+        "description": "Type: Image (JPG)"
       },
       "document9": {
         "title": "Document #9 (Reserved)",

@@ -142,7 +142,7 @@
       },
       "ekopfoDatabaseModel": {
         "title": "EKOPFO database model",
-        "description": "Тип: Зображення (Схема) Розмір: [Вкажіть розмір]"
+        "description": "Тип: Зображення (Схема)"
       },
       "statusModelCase": {
         "title": "Статус-модель основного флоу справи",
@@ -150,11 +150,11 @@
       },
       "statusModelVector": {
         "title": "Статус-модель процесів оскарження",
-        "description": "Тип: Зображення (SVG-Вектор) Розмір: [Вкажіть розмір]"
+        "description": "Тип: Зображення (SVG-Вектор)"
       },
       "statusModelImage": {
         "title": "Статус-модель картинка",
-        "description": "Тип: Зображення (JPG-Картинка) Розмір: [Вкажіть розмір]"
+        "description": "Тип: Зображення (JPG-Картинка)"
       },
       "document9": {
         "title": "Документ №9 (Резерв)",
