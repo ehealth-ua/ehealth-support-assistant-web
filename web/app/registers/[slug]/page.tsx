@@ -8,6 +8,7 @@ type NotebookItem = {
   slug: string;
   title: string;
   description?: string;
+  statusUrl?: string;
   links?: { label: string; url: string; image?: string }[];
   instructions?: string[];
 };
@@ -132,6 +133,28 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
           );
         })}
       </section>
+
+      {item.statusUrl && (
+        <section style={{ marginTop: 32, maxWidth: 1100 }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: 16, color: '#1a1a1a' }}>
+            {t.registers?.statusIframe || 'Статус системи'}
+          </h2>
+          <div style={{ 
+            width: '100%', 
+            height: '70vh', 
+            minHeight: '400px',
+            border: '1px solid #ddd', 
+            borderRadius: 8, 
+            overflow: 'hidden' 
+          }}>
+            <iframe 
+              src={item.statusUrl} 
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              title={`${translatedTitle} - ${t.registers?.statusIframe || 'Статус системи'}`}
+            />
+          </div>
+        </section>
+      )}
 
       {item.instructions && item.instructions.length > 0 && (
         <section style={{ marginTop: 24 }}>

@@ -3,6 +3,7 @@
     "slug": "ekopfo",
     "title": "ЕКОПФО",
     "description": "Надані документи описують систему управління медичними справами пацієнтів...",
+    "statusUrl": "https://ekoppho.instatus.com",
     "links": [
       {
         "label": "Аналітичний ШІ по модулю ЕКОПФО",
