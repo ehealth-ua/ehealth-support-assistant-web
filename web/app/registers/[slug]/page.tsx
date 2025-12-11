@@ -70,7 +70,12 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
       <main style={{ padding: "24px" }}>
         {translatedDescription && <p style={{ marginBottom: 24, fontSize: '1.1rem', lineHeight: 1.6 }}>{translatedDescription}</p>}
 
-      <section style={{ display: "grid", gap: 24, maxWidth: 1100 }}>
+      <section style={{ 
+        display: "grid", 
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: 24, 
+        maxWidth: 1100 
+      }}>
         {(item.links || []).map((link, index) => {
           const isSupport = link.label === 'Підтримка користувачів';
           const isAnalytics = index === 0 && !isSupport; // First link is typically the analytics module
@@ -89,7 +94,8 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
             <div
               key={link.url}
               style={{
-                display: "block",
+                display: "flex",
+                flexDirection: "column",
                 border: "1px solid #ddd",
                 borderRadius: 8,
                 padding: 16,
@@ -101,29 +107,27 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
                 rel="noopener noreferrer"
                 style={{ textDecoration: "underline", color: "#0066cc" }}
               >
-                <span style={{ display: 'block', marginTop: 0, fontSize: '1.17em', fontWeight: 'bold' }}>{translatedLabel}</span>
+                <span style={{ display: 'block', marginTop: 0, marginBottom: 16, fontSize: '1.17em', fontWeight: 'bold' }}>{translatedLabel}</span>
               </a>
-              <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', marginTop: 16 }}>
-                {link.image && (
-                  <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', flexShrink: 0, width: imgSize, height: imgSize }}>
-                    <Image
-                      src={link.image}
-                      alt={translatedLabel}
-                      width={imgSize}
-                      height={imgSize}
-                      style={{ objectFit: 'cover', borderRadius: 8, width: '100%', height: '100%' }}
-                    />
-                  </a>
-                )}
-                {isAnalytics && translatedCommentary && (
-                  <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}>
-                    {translatedCommentary}
-                  </p>
-                )}
-                {isSupport && userSupportText && typeof userSupportText === 'object' && (
-                  <UserSupportContent userSupportText={userSupportText} />
-                )}
-              </div>
+              {link.image && (
+                <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', alignSelf: 'center', marginBottom: 16 }}>
+                  <Image
+                    src={link.image}
+                    alt={translatedLabel}
+                    width={imgSize}
+                    height={imgSize}
+                    style={{ objectFit: 'cover', borderRadius: 8, width: imgSize, height: imgSize }}
+                  />
+                </a>
+              )}
+              {isAnalytics && translatedCommentary && (
+                <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#444' }}>
+                  {translatedCommentary}
+                </p>
+              )}
+              {isSupport && userSupportText && typeof userSupportText === 'object' && (
+                <UserSupportContent userSupportText={userSupportText} />
+              )}
             </div>
           );
         })}
