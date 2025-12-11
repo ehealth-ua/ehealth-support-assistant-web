@@ -127,19 +127,19 @@
     "cards": {
       "promptTechniques": {
         "title": "Prompt Building Techniques",
-        "description": "Type: PDF. Size: [Specify size]"
+        "description": "Type: PDF"
       },
       "prompting": {
         "title": "Prompting (Overview)",
-        "description": "Type: PDF. Size: [Specify size]"
+        "description": "Type: PDF"
       },
       "ekTeamsChecklist": {
         "title": "Checklist for Newly Created EK Teams",
-        "description": "Type: DOCX. Size: [Specify size]"
+        "description": "Type: DOCX"
       },
       "dzrReference": {
         "title": "DZR Reference",
-        "description": "Type: XLSX. Size: [Specify size]"
+        "description": "Type: XLSX"
       },
       "ekopfoDatabaseModel": {
         "title": "EKOPFO database model",

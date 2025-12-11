@@ -127,19 +127,19 @@
     "cards": {
       "promptTechniques": {
         "title": "Варіанти техніки побудови промптів",
-        "description": "Тип: PDF. Розмір: [Вкажіть розмір]"
+        "description": "Тип: PDF"
       },
       "prompting": {
         "title": "Промптинг (Огляд)",
-        "description": "Тип: PDF. Розмір: [Вкажіть розмір]"
+        "description": "Тип: PDF"
       },
       "ekTeamsChecklist": {
         "title": "Чек-лист для новостворених команд ЕК",
-        "description": "Тип: DOCX. Розмір: [Вкажіть розмір]"
+        "description": "Тип: DOCX"
       },
       "dzrReference": {
         "title": "ДЗР довідник",
-        "description": "Тип: XLSX. Розмір: [Вкажіть розмір]"
+        "description": "Тип: XLSX"
       },
       "ekopfoDatabaseModel": {
         "title": "EKOPFO database model",
