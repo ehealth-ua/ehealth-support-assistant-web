@@ -84,6 +84,7 @@
 
   "registers": {
     "title": "Registries - Status",
+    "statusTitle": "Systems Status",
     "statusIframe": "System Status"
   },
 
