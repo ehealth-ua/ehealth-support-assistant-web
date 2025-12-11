@@ -145,11 +145,11 @@
         "description": "Type: Image (Schema). Size: [Specify size]"
       },
       "statusModelCase": {
-        "title": "EKOPFO Case Status Model",
+        "title": "Main case flow status model",
         "description": "Type: Image (Schema)"
       },
       "statusModelVector": {
-        "title": "Status Model Vector",
+        "title": "Appeal process status model",
         "description": "Type: Image (SVG Vector). Size: [Specify size]"
       },
       "statusModelImage": {

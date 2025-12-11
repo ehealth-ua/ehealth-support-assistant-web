@@ -44,14 +44,14 @@ const documents: Document[] = [
   {
     key: 'statusModelCase',
     fileType: 'IMG',
-    filePath: '/images/Статус модель справи ЕКОПФО.png',
-    fileSize: '0.6 MB',
+    filePath: '/images/Model_1_maintrack.svg',
+    fileSize: '0.2 MB',
   },
   {
     key: 'statusModelVector',
     fileType: 'IMG',
-    filePath: '/images/Статус-модель вектор.svg',
-    fileSize: '0.3 MB',
+    filePath: '/images/Model_2_skarga.svg',
+    fileSize: '0.2 MB',
   },
   {
     key: 'statusModelImage',
