@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { getTranslations } from '../../lib/i18n';
 
@@ -51,7 +50,7 @@ export default async function RegistersPage() {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-12 space-y-8">
+      <div className="container mx-auto px-4 py-6 space-y-8">
         {/* Status Grid Section */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -59,7 +58,7 @@ export default async function RegistersPage() {
               const registryName = t.registryCards?.[registry.slug as keyof typeof t.registryCards] || registry.title;
               return (
                 <div key={registry.slug} className="space-y-2">
-                  <h3 className="text-xl font-semibold text-center">{registryName}</h3>
+                  <h3 className="text-xl font-semibold text-center text-blue-600">{registryName}</h3>
                   <div className="w-full h-[42vh] min-h-[280px] border rounded overflow-hidden shadow-lg">
                     <iframe 
                       src={registry.statusUrl} 
@@ -71,23 +70,6 @@ export default async function RegistersPage() {
               );
             })}
           </div>
-        </section>
-
-        {/* Registries Catalog Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mt-6">{t.catalogTitle}</h2>
-          {registries.length === 0 ? (
-            <p className="text-red-600">{t.registersNotFound}</p>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-              {registries.map((r) => (
-                <Link key={r.slug} href={`/registers/${r.slug}`} className="block border rounded p-4 hover:shadow">
-                  <h3 className="font-semibold">{t.registryCards?.[r.slug as keyof typeof t.registryCards] || r.title}</h3>
-                  <p className="text-sm text-gray-500 mt-2">{r.description}</p>
-                </Link>
-              ))}
-            </div>
-          )}
         </section>
       </div>
     </>
