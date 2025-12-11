@@ -123,6 +123,7 @@
   "documentation": {
     "title": "Documentation",
     "subtitle": "General Materials and Instructions",
+    "fileSize": "Size",
     "cards": {
       "promptTechniques": {
         "title": "Prompt Building Techniques",

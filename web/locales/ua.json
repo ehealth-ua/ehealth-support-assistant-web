@@ -123,6 +123,7 @@
   "documentation": {
     "title": "Документація",
     "subtitle": "Загальні матеріали та інструкції",
+    "fileSize": "Розмір",
     "cards": {
       "promptTechniques": {
         "title": "Варіанти техніки побудови промптів",

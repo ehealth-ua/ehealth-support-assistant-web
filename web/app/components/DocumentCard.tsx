@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useTranslations } from '../../lib/useTranslations';
 
 interface DocumentCardProps {
   title: string;
@@ -16,6 +17,8 @@ export default function DocumentCard({
   filePath,
   fileSize,
 }: DocumentCardProps) {
+  const { t } = useTranslations();
+  
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'PDF':
@@ -80,7 +83,7 @@ export default function DocumentCard({
           {title}
         </button>
         {description && <p className="text-gray-600 text-sm mb-2">{description}</p>}
-        {fileSize && <p className="text-gray-500 text-xs">Розмір: {fileSize}</p>}
+        {fileSize && <p className="text-gray-500 text-xs">{t.documentation?.fileSize || 'Розмір'}: {fileSize}</p>}
       </div>
 
       {/* Edit Icon */}
