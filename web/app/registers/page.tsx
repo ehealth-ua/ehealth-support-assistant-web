@@ -30,10 +30,9 @@ export default async function RegistersPage() {
 
   const registries = await loadRegistries();
   
-  // Filter registries with statusUrl for the status grid (first two for testing)
+  // Filter registries with statusUrl for the status grid
   const registriesWithStatus = registries
-    .filter(r => r.statusUrl)
-    .slice(0, 2); // Show only first 2 for testing: EKOPFO and Endoprosthesis
+    .filter(r => r.statusUrl);
 
   return (
     <>
