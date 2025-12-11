@@ -15,7 +15,7 @@ interface Registry {
 }
 
 async function loadRegistries(): Promise<Registry[]> {
-  const file = path.join(process.cwd(), 'web', 'config', 'notebooks.json');
+  const file = path.join(process.cwd(), 'config', 'notebooks.json');
   try {
     const data = fs.readFileSync(file, 'utf-8');
     return JSON.parse(data);
