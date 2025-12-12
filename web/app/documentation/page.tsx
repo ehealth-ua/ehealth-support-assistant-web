@@ -55,9 +55,9 @@ const documents: Document[] = [
   },
   {
     key: 'statusModelImage',
-    fileType: 'IMG',
-    filePath: '/images/Статус-модель картинка.jpg',
-    fileSize: '0.7 MB',
+    fileType: 'PDF',
+    filePath: '/documents/EKOPFO-new digital way.pdf',
+    fileSize: '14.8 MB',
   },
   {
     key: 'document9',
