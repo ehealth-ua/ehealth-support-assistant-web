@@ -1,0 +1,548 @@
+# 📋 ПАСПОРТ САЙТУ
+## Розділ 6: Картки реєстрів (Registry Cards) — Частина 3
+
+---
+
+## 6.10. 📊 ТАБЛИЦІ ВЛАСТИВОСТЕЙ ТА ПОРІВНЯННЯ
+
+### 6.10.1 Таблиця властивостей RegisterCard
+
+**Component Props Specification:**
+
+| Prop | Type | Required | Default | Description | Constraints | Example |
+|------|------|----------|---------|-------------|-------------|---------|
+| **title** | `string` | ✅ Yes | N/A | Назва картки, що відображається користувачу. Використовується для заголовка `<h4>` та `alt` атрибута зображення. | • Min: 1 символ<br>• Max: ~100 символів (рекомендовано)<br>• Обрізається: `line-clamp-2` (2 рядки)<br>• Може містити: кирилиця, латиниця, цифри, спецсимволи | `"ЕКОПФО"`<br>`"Аналітичний ШІ по модулю ЕКОПФО"`<br>`"Підтримка користувачів"` |
+| **image** | `string` | ✅ Yes | N/A | Шлях до зображення (відносний або абсолютний URL). Передається в `<Image src={image}>`. | • Формат: `/path/to/image.ext` або `https://...`<br>• Підтримувані типи: `.webp`, `.png`, `.jpg`, `.jpeg`, `.svg`<br>• Optimal size: 384×384px або більше (Retina)<br>• Fallback: Browser показує broken image icon | `"/images/ai-ekopfo.webp"`<br>`"/images/Helpdesk.webp"`<br>`"https://example.com/image.png"` |
+| **url** | `string` | ✅ Yes | N/A | URL для переходу при кліку на картку. Використовується в атрибуті `href` елемента `<a>`. Відкривається в новій вкладці (`target="_blank"`). | • Формат: valid URL (absolute or relative)<br>• Security: автоматично додається `noopener noreferrer`<br>• Рекомендовано: absolute URLs для external links<br>• Internal links: працюють, але втрачають SPA переваги | `"https://notebooklm.google.com/notebook/..."`<br>`"https://e-health-ua.atlassian.net/..."`<br>`"/registers/ekopfo"` (не рекомендовано) |
+
+**Additional Component Characteristics:**
+
+| Characteristic | Value | Description |
+|----------------|-------|-------------|
+| **Component Type** | Stateless Functional Component | Не має внутрішнього стану, pure function |
+| **Rendering** | Client/Server Compatible | Працює як Server Component (no hooks) |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **Image Optimization** | Next.js `<Image>` | Automatic optimization, lazy loading |
+| **Target Behavior** | `_blank` (new tab) | Всі посилання відкриваються в новій вкладці |
+| **Security** | `noopener noreferrer` | Захист від tabnabbing та referrer leakage |
+| **Accessibility** | Semantic HTML + Alt tags | `<a>`, `<h4>`, `alt="{title} image"` |
+| **Hover Effect** | Shadow animation | `hover:shadow-lg transition-shadow` |
+| **Image Container** | Fixed dimensions | `w-1/2 h-32` (50% width, 128px height) |
+| **Image Fit** | Object Cover | `object-cover` (crop to fill container) |
+| **Title Truncation** | 2 lines max | `line-clamp-2` (ellipsis after 2 lines) |
+| **Text Alignment** | Center | `text-center` |
+| **Localization** | External (props-based) | Component не має вбудованої локалізації |
+
+---
+
+### 6.10.2 Таблиця порівняння карток усіх 7 реєстрів
+
+**Registry Cards Data Comparison:**
+
+| # | Registry | slug | title | title (length) | slug (length) | description (length) | links[0].image | Image Exists | Analytics Label Length |
+|---|----------|------|-------|----------------|---------------|----------------------|----------------|--------------|------------------------|
+| 1 | **ЕКОПФО** | `ekopfo` | `ЕКОПФО` | 6 chars | 6 chars | 500+ chars | `/images/ai-ekopfo.webp` | ✅ Yes | 32 chars ("Аналітичний ШІ по модулю ЕКОПФО") |
+| 2 | **Ендопротезування** | `endoprosthesis` | `Ендопротезування` | 16 chars | 15 chars | 300+ chars | `/images/ai-endoprosthesis.webp` | ✅ Yes | 48 chars ("Аналітичний ШІ по модулю Ендопротезування") |
+| 3 | **Інтернатура** | `internatura` | `Інтернатура` | 11 chars | 10 chars | 280+ chars | `/images/ai-internatura.webp` | ✅ Yes | 68 chars ("Аналітичний ШІ по модулю рейтингового розподілу в Інтернатуру") |
+| 4 | **Вакансії** | `vacancies` | `Вакансії` | 8 chars | 9 chars | 250+ chars | `/images/ai-vacancies.webp` | ✅ Yes | 56 chars ("Аналітичний ШІ по модулю Вакансій в медичних закладах") |
+| 5 | **БПР** | `bpr` | `Система Безперервного Розвитку` | 31 chars | 3 chars | 230+ chars | `/images/ai-bpr.webp` | ✅ Yes | 54 chars ("Аналітичний ШІ по модулю Безперервного Розвитку лікарів") |
+| 6 | **е-Кров** | `ekrov` | `е-Кров` | 6 chars | 5 chars | 240+ chars | `/images/ai-ekrov.webp` | ✅ Yes | 32 chars ("Аналітичний ШІ по модулю е-Кров") |
+| 7 | **СЕН ІКП** | `sen-ikp` | `СЕН ІКП` | 8 chars | 7 chars | 270+ chars | `/images/ai-senikp.webp` | ✅ Yes | 100 chars ("Аналітичний ШІ по модулю системи Електронної нотифікації інформації про косметичну продукцію") |
+
+**Statistics Summary:**
+
+```yaml
+Title Length:
+  Shortest: "ЕКОПФО", "е-Кров" (6 chars)
+  Longest: "Система Безперервного Розвитку" (31 chars)
+  Average: 12.3 chars
+  Range: 6-31 chars
+
+Slug Length:
+  Shortest: "bpr" (3 chars)
+  Longest: "endoprosthesis" (15 chars)
+  Average: 7.9 chars
+  Range: 3-15 chars
+  With hyphen: 1 ("sen-ikp")
+
+Description Length:
+  Shortest: "БПР" (~230 chars)
+  Longest: "ЕКОПФО" (~500 chars)
+  Average: ~300 chars
+  Range: 230-500 chars
+
+Image Availability:
+  All registries: 7/7 (100%)
+  Pattern: /images/ai-{slug}.webp
+  Exception: sen-ikp → ai-senikp.webp (no hyphen)
+
+Analytics Label Length:
+  Shortest: "ЕКОПФО", "е-Кров" (32 chars)
+  Longest: "СЕН ІКП" (100 chars)
+  Average: ~56 chars
+  Range: 32-100 chars
+  Note: СЕН ІКП має найдовшу назву (в 3 рази довше за ЕКОПФО)
+```
+
+**Title Display Impact:**
+
+| Registry | Title Length | Lines on Card (estimate) | Truncation Risk |
+|----------|--------------|--------------------------|-----------------|
+| ЕКОПФО | 6 chars | 1 line | ❌ No risk |
+| Ендопротезування | 16 chars | 1 line | ❌ No risk |
+| Інтернатура | 11 chars | 1 line | ❌ No risk |
+| Вакансії | 8 chars | 1 line | ❌ No risk |
+| **БПР** | **31 chars** | **2 lines** | ⚠️ May wrap on small screens |
+| е-Кров | 6 chars | 1 line | ❌ No risk |
+| СЕН ІКП | 8 chars | 1 line | ❌ No risk |
+
+**Note:** Only БПР ("Система Безперервного Розвитку") may wrap to 2 lines due to длина (31 chars). All others fit comfortably on 1 line. `line-clamp-2` ensures max 2 lines with ellipsis if overflow.
+
+---
+
+### 6.10.3 ASCII-схема рендерингу картки
+
+**Detailed Rendering Flow:**
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                   REGISTERCARD RENDERING PROCESS                    │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  INPUT PROPS                                                        │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  {                                                            │ │
+│  │    title: "ЕКОПФО",                                           │ │
+│  │    image: "/images/ai-ekopfo.webp",                           │ │
+│  │    url: "https://notebooklm.google.com/notebook/..."         │ │
+│  │  }                                                            │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 1: Create Anchor Wrapper                                     │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <a                                                           │ │
+│  │    href="https://notebooklm.google.com/notebook/..."         │ │
+│  │    target="_blank"            ← Opens in new tab             │ │
+│  │    rel="noopener noreferrer"  ← Security                     │ │
+│  │    className="block border rounded overflow-hidden           │ │
+│  │                hover:shadow-lg transition-shadow"            │ │
+│  │  >                                                            │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 2: Create Image Container                                    │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <div className="                                             │ │
+│  │    w-1/2         ← 50% width of card                          │ │
+│  │    h-32          ← 128px fixed height                         │ │
+│  │    relative      ← For absolute Image positioning            │ │
+│  │    bg-gray-200   ← Fallback background (loading/error)       │ │
+│  │    mx-auto       ← Center horizontally                        │ │
+│  │    rounded       ← Rounded corners                            │ │
+│  │    overflow-hidden ← Crop overflow                            │ │
+│  │  ">                                                           │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 3: Render Next.js Image                                      │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <Image                                                       │ │
+│  │    src="/images/ai-ekopfo.webp"  ← Image path                │ │
+│  │    alt="ЕКОПФО image"            ← Accessibility              │ │
+│  │    fill                          ← Fill parent (absolute)    │ │
+│  │    className="object-cover"      ← Crop to cover             │ │
+│  │    priority={false}              ← Lazy load                 │ │
+│  │  />                                                           │ │
+│  │                                                               │ │
+│  │  Next.js optimizations:                                       │ │
+│  │  • Automatic WebP conversion                                 │ │
+│  │  • Responsive sizes                                          │ │
+│  │  • Lazy loading (IntersectionObserver)                       │ │
+│  │  • CDN caching                                               │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 4: Create Text Container                                     │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <div className="                                             │ │
+│  │    p-4          ← 16px padding all sides                      │ │
+│  │    text-center  ← Center text horizontally                    │ │
+│  │  ">                                                           │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 5: Render Title                                              │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <h4 className="                                              │ │
+│  │    font-semibold  ← Bold font weight (600)                    │ │
+│  │    text-lg        ← 18px font size                            │ │
+│  │    line-clamp-2   ← Max 2 lines, ellipsis after              │ │
+│  │  ">                                                           │ │
+│  │    ЕКОПФО                                                     │ │
+│  │  </h4>                                                        │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  STEP 6: Close Tags                                                │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  </div>  ← Close text container                               │ │
+│  │  </div>  ← Close image container                              │ │
+│  │  </a>    ← Close anchor wrapper                               │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  RENDERED OUTPUT (HTML)                                             │
+│  ┌───────────────────────────────────────────────────────────────┐ │
+│  │  <a href="https://..." target="_blank" rel="noopener         │ │
+│  │     noreferrer" class="block border rounded overflow-hidden  │ │
+│  │     hover:shadow-lg transition-shadow">                       │ │
+│  │    <div class="w-1/2 h-32 relative bg-gray-200 mx-auto       │ │
+│  │                rounded overflow-hidden">                      │ │
+│  │      <img src="/_next/image?url=%2Fimages%2Fai-ekopfo.webp&  │ │
+│  │           w=828&q=75" alt="ЕКОПФО image"                      │ │
+│  │           style="position:absolute; inset:0; object-fit:      │ │
+│  │           cover;">                                            │ │
+│  │    </div>                                                     │ │
+│  │    <div class="p-4 text-center">                              │ │
+│  │      <h4 class="font-semibold text-lg line-clamp-2">          │ │
+│  │        ЕКОПФО                                                 │ │
+│  │      </h4>                                                    │ │
+│  │    </div>                                                     │ │
+│  │  </a>                                                         │ │
+│  └───────────────────────────────────────────────────────────────┘ │
+│                           ↓                                         │
+│  BROWSER RENDERING (Visual)                                        │
+│  ┌─────────────────────┐                                           │
+│  │  ╔═══════════════╗  │ ← Border (border class)                  │
+│  │  ║  ┌─────────┐  ║  │                                           │
+│  │  ║  │         │  ║  │ ← Image (50% width, 128px height)        │
+│  │  ║  │  Image  │  ║  │   Centered (mx-auto)                     │
+│  │  ║  │         │  ║  │   Gray background visible while loading  │
+│  │  ║  └─────────┘  ║  │                                           │
+│  │  ║               ║  │                                           │
+│  │  ║    ЕКОПФО     ║  │ ← Title (centered, semibold, 18px)       │
+│  │  ║               ║  │                                           │
+│  │  ╚═══════════════╝  │                                           │
+│  └─────────────────────┘                                           │
+│         ↓ (hover)                                                  │
+│  ┌─────────────────────┐                                           │
+│  │  ╔═══════════════╗  │ ← Larger shadow (hover:shadow-lg)        │
+│  │ ╱║  ┌─────────┐  ║╲ │   Smooth transition (transition-shadow)  │
+│  │╱ ║  │         │  ║ ╲│                                           │
+│  │  ║  │  Image  │  ║  │                                           │
+│  │  ║  │         │  ║  │                                           │
+│  │  ║  └─────────┘  ║  │                                           │
+│  │  ║               ║  │                                           │
+│  │  ║    ЕКОПФО     ║  │                                           │
+│  │  ║               ║  │                                           │
+│  │  ╚═══════════════╝  │                                           │
+│  └─────────────────────┘                                           │
+│         ↓ (click)                                                  │
+│  Opens: https://notebooklm.google.com/notebook/... (new tab)      │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Simplified Visual Flow:**
+
+```
+Props → Anchor → ImageContainer → Next.js Image → Text → Title → HTML → Browser
+  ↓       ↓           ↓               ↓            ↓      ↓       ↓       ↓
+{...}    <a>        <div>         <Image>       <div>   <h4>    <a>    Visual
+                   w-1/2 h-32      fill        p-4     text    href   Card
+                   mx-auto      object-cover  center   lg    _blank  Hover
+```
+
+---
+
+### 6.10.4 Схема взаємодії: notebooks.json → RegisterCard → Home Page → Detail Page
+
+**Full Data Flow Architecture:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         DATA SOURCE (Single Source of Truth)                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │  config/notebooks.json                                                │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  [                                                              │  │ │
+│  │  │    {                                                            │  │ │
+│  │  │      "slug": "ekopfo",                     ← Unique ID          │  │ │
+│  │  │      "title": "ЕКОПФО",                    ← Display name       │  │ │
+│  │  │      "description": "Надані документи...", ← Full description   │  │ │
+│  │  │      "statusUrl": "https://ekoppho...",    ← Instatus URL       │  │ │
+│  │  │      "links": [                            ← External links     │  │ │
+│  │  │        {                                                        │  │ │
+│  │  │          "label": "Аналітичний ШІ...",                          │  │ │
+│  │  │          "url": "https://notebooklm...",                        │  │ │
+│  │  │          "image": "/images/ai-ekopfo.webp" ← Card image         │  │ │
+│  │  │        },                                                       │  │ │
+│  │  │        { ... Helpdesk link ... }                                │  │ │
+│  │  │      ]                                                          │  │ │
+│  │  │    },                                                           │  │ │
+│  │  │    { ... 6 more registries ... }                                │  │ │
+│  │  │  ]                                                              │  │ │
+│  │  └─────────────────────────────────────────────────────────────────┘  │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+                         ┌──────────────────────┐
+                         │  loadRegistries()    │ ← Server-side function
+                         │  (fs.readFileSync)   │
+                         └──────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           HOME PAGE (app/page.tsx)                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  const registries = await loadRegistries()  ← Array of 7 registries        │
+│  const locale = cookies().get('NEXT_LOCALE')?.value ?? 'uk'                │
+│  const t = await getTranslations(locale)    ← Load translations            │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │  Hero Section                                                         │ │
+│  │  • Background image: Hero_ezdorovya.webp                              │ │
+│  │  • Title: t.siteTitle                                                 │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                    ↓                                        │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │  Registry Cards Grid                                                  │ │
+│  │  <div className="grid grid-cols-1 sm:2 md:3 lg:4 gap-6">             │ │
+│  │    {registries.map((r) => {                                           │ │
+│  │                                                                       │ │
+│  │      ┌─────────────────────────────────────────────────────────────┐ │ │
+│  │      │ Data Extraction                                             │ │ │
+│  │      ├─────────────────────────────────────────────────────────────┤ │ │
+│  │      │ const img = (r.links?.[0]?.image) || '/images/Helpdesk.webp'│ │ │
+│  │      │ const translatedTitle = getRegistryTitle(r)                 │ │ │
+│  │      │   → t.registryCards?.[r.slug] || r.title                    │ │ │
+│  │      └─────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  │      ┌─────────────────────────────────────────────────────────────┐ │ │
+│  │      │ Inline Card Rendering (NOT RegisterCard component)         │ │ │
+│  │      ├─────────────────────────────────────────────────────────────┤ │ │
+│  │      │ <div key={r.slug} className="border rounded-lg...">        │ │ │
+│  │      │   <Link href={`/registers/${r.slug}`}>   ← Internal link   │ │ │
+│  │      │     <div style={{ paddingBottom: '100%' }}>  ← Square      │ │ │
+│  │      │       <Image src={img} alt={translatedTitle} fill />       │ │ │
+│  │      │     </div>                                                  │ │ │
+│  │      │     <div className="p-4 text-center">                       │ │ │
+│  │      │       <span className="text-lg font-semibold text-blue-600">│ │ │
+│  │      │         {translatedTitle}                                   │ │ │
+│  │      │       </span>                                               │ │ │
+│  │      │     </div>                                                  │ │ │
+│  │      │   </Link>                                                   │ │ │
+│  │      │ </div>                                                      │ │ │
+│  │      └─────────────────────────────────────────────────────────────┘ │ │
+│  │                                                                       │ │
+│  │    })}                                                                │ │
+│  │  </div>                                                               │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  Visual Result:                                                             │
+│  ┌────────┬────────┬────────┬────────┐                                     │
+│  │ ┌────┐ │ ┌────┐ │ ┌────┐ │ ┌────┐ │                                     │
+│  │ │img │ │ │img │ │ │img │ │ │img │ │ ← 4 cards per row (desktop lg)     │
+│  │ └────┘ │ └────┘ │ └────┘ │ └────┘ │                                     │
+│  │ Title  │ Title  │ Title  │ Title  │                                     │
+│  ├────────┼────────┼────────┼────────┤                                     │
+│  │ ┌────┐ │ ┌────┐ │ ┌────┐ │        │                                     │
+│  │ │img │ │ │img │ │ │img │ │        │ ← 7 cards total                    │
+│  │ └────┘ │ └────┘ │ └────┘ │        │                                     │
+│  │ Title  │ Title  │ Title  │        │                                     │
+│  └────────┴────────┴────────┴────────┘                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+                            User clicks card
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    NAVIGATION (Next.js Client-Side Routing)                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  <Link href={`/registers/${r.slug}`}>  ← Example: /registers/ekopfo        │
+│                                                                             │
+│  Next.js Router:                                                            │
+│  • Client-side navigation (SPA)                                             │
+│  • Prefetching on hover (link visible in viewport)                          │
+│  • Instant page transition (no full reload)                                 │
+│  • URL updates: / → /registers/ekopfo                                       │
+│  • Browser history: pushState()                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 REGISTRY DETAIL PAGE (app/registers/[slug]/page.tsx)        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  export default async function RegisterDetail({ params }) {                 │
+│    const slug = params.slug  ← "ekopfo" from URL                           │
+│                                                                             │
+│    ┌─────────────────────────────────────────────────────────────────────┐ │
+│    │ Same Data Source (notebooks.json)                                   │ │
+│    ├─────────────────────────────────────────────────────────────────────┤ │
+│    │ const registries = await loadRegistries()  ← Same function          │ │
+│    │ const item = registries.find(n => n.slug === slug)                  │ │
+│    │   → Finds: { slug: "ekopfo", title: "ЕКОПФО", ... }                │ │
+│    └─────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│    if (!item) return <NotFoundPage />  ← 404 if slug not found             │
+│                                                                             │
+│    const locale = cookies().get('NEXT_LOCALE')?.value ?? 'uk'              │
+│    const t = await getTranslations(locale)                                 │
+│                                                                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │ Page Structure                                                        │ │
+│  ├───────────────────────────────────────────────────────────────────────┤ │
+│  │                                                                       │ │
+│  │  1. Hero Banner                                                       │ │
+│  │     ┌───────────────────────────────────────────────────────────┐    │ │
+│  │     │ Background: Hero_ezdorovya.webp                           │    │ │
+│  │     │ Title: translatedTitle (t.registryCards.ekopfo || item.title)│ │ │
+│  │     │   → "ЕКОПФО"                                               │    │ │
+│  │     └───────────────────────────────────────────────────────────┘    │ │
+│  │                                                                       │ │
+│  │  2. Description                                                       │ │
+│  │     ┌───────────────────────────────────────────────────────────┐    │ │
+│  │     │ translatedDescription (t.registryDetails.ekopfo.description  │ │ │
+│  │     │   || item.description)                                     │    │ │
+│  │     │   → "Надані документи описують систему управління..."     │    │ │
+│  │     └───────────────────────────────────────────────────────────┘    │ │
+│  │                                                                       │ │
+│  │  3. Links Grid (2 cards)                                              │ │
+│  │     ┌───────────────────────────────────────────────────────────┐    │ │
+│  │     │ Analytics Card (384×384)                                  │    │ │
+│  │     │ • Image: item.links[0].image ("/images/ai-ekopfo.webp")   │    │ │
+│  │     │ • Label: "Аналітичний ШІ по модулю ЕКОПФО"                │    │ │
+│  │     │ • URL: NotebookLM notebook                                │    │ │
+│  │     │ • Commentary: translatedAnalyticsCommentary               │    │ │
+│  │     └───────────────────────────────────────────────────────────┘    │ │
+│  │     ┌───────────────────────────────────────────────────────────┐    │ │
+│  │     │ Support Card (320×320)                                    │    │ │
+│  │     │ • Image: item.links[1].image ("/images/Helpdesk.webp")    │    │ │
+│  │     │ • Label: "Підтримка користувачів"                         │    │ │
+│  │     │ • URL: Atlassian Helpdesk portal                          │    │ │
+│  │     │ • Component: <UserSupportContent>                         │    │ │
+│  │     └───────────────────────────────────────────────────────────┘    │ │
+│  │                                                                       │ │
+│  │  4. Status Section                                                    │ │
+│  │     ┌───────────────────────────────────────────────────────────┐    │ │
+│  │     │ <iframe src={item.statusUrl}                              │    │ │
+│  │     │   → "https://ekoppho.instatus.com"                        │    │ │
+│  │     │ Height: 70vh (min 400px)                                  │    │ │
+│  │     │ Shows: Real-time system status                            │    │ │
+│  │     └───────────────────────────────────────────────────────────┘    │ │
+│  │                                                                       │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  Visual Result:                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │ ┌─────────────────────────────────────────────────────────────────┐ │  │
+│  │ │ Hero: ЕКОПФО                                                    │ │  │
+│  │ └─────────────────────────────────────────────────────────────────┘ │  │
+│  │ Description paragraph...                                            │  │
+│  │ ┌─────────────────────┐  ┌─────────────────────┐                   │  │
+│  │ │ Analytics Card      │  │ Support Card        │                   │  │
+│  │ │ (384×384 image)     │  │ (320×320 image)     │                   │  │
+│  │ │ NotebookLM AI       │  │ Helpdesk            │                   │  │
+│  │ └─────────────────────┘  └─────────────────────┘                   │  │
+│  │ ┌─────────────────────────────────────────────────────────────────┐ │  │
+│  │ │ Status Iframe (70vh)                                            │ │  │
+│  │ │ Real-time uptime, incidents, maintenance                        │ │  │
+│  │ └─────────────────────────────────────────────────────────────────┘ │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Data Consistency Flow:**
+
+```
+notebooks.json (Single Source)
+      ↓
+      ├─→ Home Page: Uses slug, title, links[0].image
+      │     ↓
+      │   Renders 7 cards (inline, NOT RegisterCard component)
+      │     ↓
+      │   User clicks card
+      │     ↓
+      └─→ Detail Page: Uses ALL fields (slug, title, description, statusUrl, links)
+            ↓
+          Finds same registry by slug (registries.find(n => n.slug === slug))
+            ↓
+          Renders full page with all data
+
+Consistency guaranteed:
+  ✅ Same data source (notebooks.json)
+  ✅ Same slug → same detail page
+  ✅ Same title → consistent naming
+  ✅ Same image → visual continuity
+  ✅ No data duplication
+  ✅ Single edit updates both pages
+```
+
+**RegisterCard Component (Alternative Flow - Not Used):**
+
+```
+If RegisterCard were used on Home Page:
+  
+  notebooks.json
+      ↓
+  Home Page (app/page.tsx)
+      ↓
+  registries.map(r => (
+    <RegisterCard
+      title={getRegistryTitle(r)}
+      image={r.links[0].image}
+      url={`/registers/${r.slug}`}  ← But target="_blank" is wrong for internal
+    />
+  ))
+  
+  Problem: RegisterCard uses target="_blank" (new tab)
+           Home Page needs internal navigation (SPA)
+  
+  Solution: Use inline cards (current approach) ✅
+  
+RegisterCard Better For:
+  External links (NotebookLM, Helpdesk) on Detail Page
+  Documentation pages with external resources
+  Footer links to external systems
+```
+
+**Summary of Data Flow:**
+
+```yaml
+Step 1: Data Source
+  File: config/notebooks.json
+  Records: 7 registries
+  Fields: slug, title, description, statusUrl, links
+
+Step 2: Data Loading
+  Function: loadRegistries() (fs.readFileSync)
+  Location: Server-side (app/page.tsx, app/registers/[slug]/page.tsx)
+  Frequency: Every page request (or cached in production)
+
+Step 3: Home Page Rendering
+  Component: Inline cards (NOT RegisterCard)
+  Grid: 1→2→3→4 columns (responsive)
+  Data used: slug, title, links[0].image
+  Translation: getRegistryTitle() with fallback
+
+Step 4: User Interaction
+  Event: Click on card
+  Navigation: Next.js <Link> (client-side)
+  URL: / → /registers/{slug}
+
+Step 5: Detail Page Rendering
+  Route: /registers/[slug]
+  Data: Same notebooks.json
+  Lookup: registries.find(n => n.slug === slug)
+  Sections: Hero, Description, Links, Status
+
+Step 6: Data Consistency
+  Mechanism: Single Source of Truth (notebooks.json)
+  Updates: Edit JSON → both pages updated
+  Cache: Next.js Static Generation (build time)
+```
+
+---
+
+**Дата створення:** 13 грудня 2025  
+**Таблиць:** 4 (Props, Registry comparison, Title display, Feature comparison)  
+**ASCII схем:** 2 (Rendering flow, Data flow architecture)  
+**Кількість реєстрів:** 7  
+**Data Source:** config/notebooks.json (Single Source of Truth)  
+**Current Implementation:** Inline cards (Home Page), RegisterCard available (not used)
