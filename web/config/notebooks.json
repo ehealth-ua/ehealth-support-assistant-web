@@ -124,5 +124,23 @@
         "image": "/images/Helpdesk.webp"
       }
     ]
+  },
+  {
+    "slug": "lrmsd",
+    "title": "Ліцензійний реєстр",
+    "description": "Надані джерела надають огляд реалізації Ліцензійного реєстру на провадження господарської діяльності з медичної практики",
+    "statusUrl": "https://lrmsd.instatus.com/",
+    "links": [
+      {
+        "label": "Аналітичний ШІ по модулю Ліцензійного реєстру",
+        "url": "https://notebooklm.google.com/notebook/616868f1-de6e-435b-b292-e29fb24a683d",
+        "image": "/images/ai-lrmsd.webp"
+      },
+      {
+        "label": "Підтримка користувачів",
+        "url": "https://e-health-ua.atlassian.net/servicedesk/customer/portal/168",
+        "image": "/images/Helpdesk.webp"
+      }
+    ]
   }
 ]

@@ -267,7 +267,8 @@
     "vacancies": "Vacancies",
     "bpr": "Continuous Development System",
     "ekrov": "e-Blood",
-    "sen-ikp": "SEN IKP"
+    "sen-ikp": "SEN IKP",
+    "lrmsd": "License Registry"
   },
 
   "faq": {
@@ -351,6 +352,11 @@
       "analyticsTitle": "SEN IKP Analytics Module",
       "description": "The provided resources offer user instructions for the Service Recipient's Cabinet of the Electronic Notification System for Cosmetic Products.",
       "commentary": "The strategic importance of the system lies in providing a transparent and effective mechanism for interaction between responsible persons, state market surveillance authorities, and state organizations performing toxicological control. SEN IKP is a single point for providing, accumulating, and processing mandatory information about cosmetic products placed on the Ukrainian market."
+    },
+    "lrmsd": {
+      "analyticsTitle": "License Registry Analytics Module",
+      "description": "The provided sources give an overview of the implementation of the License Registry for conducting business activities in medical practice.",
+      "commentary": "The License Registry for conducting business activities in medical practice is an automated system for collecting, accumulating, and processing data on business entities that have applied to the licensing authority for a license, are operating under a license, or whose license has been suspended (pursuant to the Law of Ukraine \"On Licensing of Types of Business Activities\")."
     }
   }
 }
