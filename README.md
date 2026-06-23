@@ -1,57 +1,50 @@
-# Cerebras VS Code Extension
+# eHealth Portal
 
-> Build with the world's fastest AI inference—directly in VS Code, powered by Cerebras.
+Це репозиторій веб-порталу для навігації по медичних реєстрах, документації та підтримки користувачів. Активний продукт у цьому сховищі — веб-додаток на базі Next.js, розташований у папці [web](web).
 
-Make GitHub Copilot run 10× faster with the world’s fastest inference API. Cerebras Inference powers the world’s top coding models at 2,000 tokens/sec, making code generation instant and enabling super-fast agentic flows. Get your [free API key](https://cloud.cerebras.ai/?referral_code=vscode&utm_source=vscode) to get started today.
+## Що містить проєкт
 
-## Get Started
+- головну сторінку порталу з картками реєстрів;
+- сторінки окремих реєстрів з посиланнями на аналітичні модулі, status-iframe та підтримку;
+- сторінку документації з доступом до PDF/DOCX/XLSX/зображень;
+- мультимовну структуру з локалізацією для української та англійської мови.
 
-### API Key Setup
+## Структура репозиторію
 
-Here's how you can use Cerebras models in VS Code:
+- [web](web) — основний веб-додаток Next.js + TypeScript.
+- [docs](docs) — технічна документація, інструкції для розширення та адміністративний runbook.
+- [archive/cerebras-legacy](archive/cerebras-legacy) — застарілі Cerebras-специфічні матеріали, перенесені з кореня репозиторію.
 
-1. Get your free API key from [Cerebras Cloud](https://cloud.cerebras.ai/?referral_code=vscode&utm_source=vscode).
-2. Install the [Cerebras VS Code extension](https://marketplace.visualstudio.com/items?itemName=cerebras.cerebras-chat).
-3. Set up GitHub Copilot if you haven't already done so.
-4. In the GitHub Copilot chat interface, select Manage Models and choose Cerebras.
-5. Paste in your API key when prompted.
-6. Choose which models to enable.
-7. You're all set! Happy coding 🎉
+## Основна документація
 
+- [docs/technical-spec.md](docs/technical-spec.md) — технічне завдання та опис функціональних вимог.
+- [docs/registry-addition-guide.md](docs/registry-addition-guide.md) — інструкція для додавання нового реєстру.
+- [docs/operations-runbook.md](docs/operations-runbook.md) — адміністративний runbook для супроводу.
+- [web/README.md](web/README.md) — коротка інструкція з локального запуску web-проєкту.
 
-> Note: Bring-your-own-key is not supported for GitHub Copilot Enterprise subscriptions at this time.
+## Локальний запуск
 
-### Supported Models
+```bash
+cd web
+npm install
+npm run dev
+```
 
-This extension provides support for **GLM 4.6 in agent mode**, as well as the following models in chat mode:
+Після цього веб-додаток буде доступний за адресою http://localhost:3000.
 
-| Model | Token Speed |
-|------------|-------------|
-| OpenAI GPT OSS | ~3,000 tokens/sec |
-| Z.ai GLM 4.6 | ~1,000 tokens/sec |
-| Qwen 3 32B | ~2,600 tokens/sec |
-| Qwen 3 235B Instruct (Preview) | ~1,400 tokens/sec |
-| Llama 3.1 8B | ~2,200 tokens/sec |
-| Llama 3.3 70B | ~2,100 tokens/sec |
+## Збірка та перевірка
 
-### Advanced Tips
+```bash
+cd web
+npm run build
+```
 
-Here's how you can accomplish more with Cerebras:
-* Get higher rate limits on GLM 4.6 with our [Cerebras Code](https://www.cerebras.ai/blog/introducing-cerebras-code) plans, starting at $50/month.
-* Generate code at top speed with Cerebras by installing the [Cerebras Code MCP server](https://inference-docs.cerebras.ai/integrations/code-mcp).
-* Read our [developer documentation](https://inference-docs.cerebras.ai/) to turbocharge your own AI products using Cerebras' Inference API.
+## Безпека та передача на супровід
 
-## What is Cerebras?
+- не комітити локальні секрети, ключі, .env-файли, сертифікати або токени;
+- для реальних середовищ використовувати зовнішні сховища секретів або змінні середовища;
+- для операційного супроводу дивитися [docs/operations-runbook.md](docs/operations-runbook.md).
 
-Cerebras Systems delivers the world's fastest AI inference for leading open models on top of its revolutionary AI hardware and software.
+## Підтримка
 
-Cerebras consistently delivers chart-topping speeds for leading open models like Qwen 3 480B Coder and OpenAI's GPT OSS 120B, according to independent measurements by [Artificial Analysis](https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct/providers) and [OpenRouter](https://openrouter.ai/qwen/qwen3-coder).
-
-At the heart of Cerebras' technology is the Wafer-Scale Engine (WSE), which is purpose-built for ultra-fast AI training and inference. The Cerebras WSE is the world's fastest processor for AI, delivering unprecedented speed that no number of GPUs can match. Learn more about our novel hardware architecture [here](https://www.youtube.com/watch?v=RhXONURR7Yc).
-
-## Related
-
-- [Cerebras Inference Documentation](https://inference-docs.cerebras.ai/)
-- [VS Code Extension API](https://code.visualstudio.com/api)
-- [Language Model API Documentation](https://code.visualstudio.com/api/extension-guides/chat)
-- [VS Code Extension Samples](https://github.com/Microsoft/vscode-extension-samples)
+У разі потреби в супроводі або уточненні функціональності звертайтеся до відповідного технічного документа або до власника/адміністратора проєкту.

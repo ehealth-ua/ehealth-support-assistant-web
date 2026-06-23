@@ -4,3 +4,27 @@ node_modules
 .vscode-test/
 *.vsix
 .next/
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.der
+*.jks
+*.keystore
+*.token
+*.secret
+*.envrc
+
+# Local runtime data
+*.log
+coverage/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
