@@ -101,3 +101,14 @@ git push origin cleanup/duplicates
 - Немає `.env` — чистий статичний сайт, всі дані в JSON-конфігах.
 - Конфіг реєстрів — `web/config/notebooks.json` (SSOT для всіх сторінок).
 - Детальний Project Brief: `/home/nkfed/Obsidian/10_Projects/ehealth-portal/PROJECT_BRIEF.md`.
+
+
+---
+
+## 🔐 Управління секретами (сервер Jinny-S7)
+
+> **Правило:** Будь-які API-ключі та токени зберігаються **виключно** у  
+> `~/.config/jinny-secrets/jinny.env` (chmod 600) — поза всіма git-репозиторіями.  
+> Ніколи не додавати ключі у project `.env`, `.md` файли або JSON-конфіги.
+
+**Деталі:** `/home/nkfed/Documents/jinny-s7-server-docs/SECRETS_CENTRAL_STORE_2026-05-09.md`
