@@ -36,10 +36,11 @@ export default function DocumentCard({
 
   const handleOpenDocument = () => {
     if (filePath) {
-      // Prefix basePath so document links resolve under the Pages sub-path.
+      // Prefix basePath so document links resolve under the Pages sub-path,
+      // and encodeURI so spaces/Cyrillic in filenames produce a valid URL.
       const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
-      const url = /^https?:\/\//.test(filePath) ? filePath : `${base}${filePath}`;
-      window.open(url, '_blank');
+      const raw = /^https?:\/\//.test(filePath) ? filePath : `${base}${filePath}`;
+      window.open(encodeURI(raw), '_blank');
     }
   };
 

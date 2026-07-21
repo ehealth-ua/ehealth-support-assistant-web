@@ -5,5 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function pagesImageLoader({ src }) {
   if (/^https?:\/\//.test(src)) return src
-  return `${basePath}${src.startsWith('/') ? '' : '/'}${src}`
+  // encodeURI so filenames with spaces/Cyrillic don't break the generated
+  // srcset (spaces are the descriptor separator and would drop candidates).
+  return encodeURI(`${basePath}${src.startsWith('/') ? '' : '/'}${src}`)
 }
