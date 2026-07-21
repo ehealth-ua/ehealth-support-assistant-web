@@ -1,9 +1,10 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useTranslations } from '../../lib/useTranslations'
+import notebooks from '../../config/notebooks.json'
 
 interface Registry {
   slug: string
@@ -11,17 +12,13 @@ interface Registry {
 }
 
 export default function Header() {
-  const [registries, setRegistries] = useState<Registry[]>([])
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const { t } = useTranslations()
 
-  useEffect(() => {
-    // Load registries from config
-    fetch('/api/registries')
-      .then(res => res.json())
-      .then(data => setRegistries(data))
-      .catch(err => console.error('Failed to load registries:', err))
-  }, [])
+  // Static export: read registries directly from the bundled config
+  // (previously fetched from the /api/registries route, unavailable on Pages).
+  const registries: Registry[] = (notebooks as { slug: string; title: string }[])
+    .map(r => ({ slug: r.slug, title: r.title }))
 
   // Function to get translated registry title
   const getRegistryTitle = (registry: Registry) => {

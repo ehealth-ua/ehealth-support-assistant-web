@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
-import { cookies } from 'next/headers'
 import { getTranslations } from '../lib/i18n'
 
 interface Registry {
@@ -28,8 +27,9 @@ export const metadata = {
 }
 
 export default async function HomePage() {
-  const c = cookies().get('NEXT_LOCALE')
-  const locale = c?.value ?? 'uk'
+  // Static export: server request context (cookies) is unavailable at build time,
+  // so we render the default locale. Client components switch language at runtime.
+  const locale = 'uk'
   const t = await getTranslations(locale)
   const registries = await loadRegistries()
 
@@ -44,7 +44,7 @@ export default async function HomePage() {
       <div
         className="w-full h-32 bg-cover bg-top relative"
         style={{
-          backgroundImage: "url('/images/Hero_ezdorovya.webp')",
+          backgroundImage: "url('/ehealth-support-assistant-web/images/Hero_ezdorovya.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'top',
         }}

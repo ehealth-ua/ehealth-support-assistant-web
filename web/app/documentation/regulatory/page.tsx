@@ -85,7 +85,7 @@ export default function RegulatoryPage() {
       <div
         className="w-full h-32 bg-cover bg-top relative"
         style={{
-          backgroundImage: "url('/images/Hero_ezdorovya.webp')",
+          backgroundImage: "url('/ehealth-support-assistant-web/images/Hero_ezdorovya.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'top',
         }}

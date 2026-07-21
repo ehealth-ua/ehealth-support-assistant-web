@@ -1,6 +1,5 @@
 import notebooks from "../../../config/notebooks.json";
 import Image from 'next/image';
-import { cookies } from 'next/headers';
 import { getTranslations } from '../../../lib/i18n';
 import { UserSupportContent } from '../../components/UserSupportContent';
 
@@ -19,8 +18,7 @@ export function generateStaticParams() {
 }
 
 export default async function RegisterDetail({ params }: { params: { slug: string } }) {
-  const c = cookies().get('NEXT_LOCALE');
-  const locale = c?.value ?? 'uk';
+  const locale = 'uk';
   const t = await getTranslations(locale);
   
   const items = Array.isArray(notebooks) ? (notebooks as NotebookItem[]) : [];
@@ -59,7 +57,7 @@ export default async function RegisterDetail({ params }: { params: { slug: strin
       <div
         className="w-full h-32 bg-cover bg-top relative"
         style={{
-          backgroundImage: "url('/images/Hero_ezdorovya.webp')",
+          backgroundImage: "url('/ehealth-support-assistant-web/images/Hero_ezdorovya.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'top',
         }}
