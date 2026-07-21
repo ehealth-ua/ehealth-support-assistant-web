@@ -5,7 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
-  images: { unoptimized: true },
+  images: {
+    loader: 'custom',
+    loaderFile: './image-loader.js',
+  },
   basePath,
   assetPrefix: basePath,
   env: { NEXT_PUBLIC_BASE_PATH: basePath },
