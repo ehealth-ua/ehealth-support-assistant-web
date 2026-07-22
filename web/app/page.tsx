@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTranslations } from '../lib/i18n'
+import { useTranslations } from '../lib/useTranslations'
+import notebooks from '../config/notebooks.json'
 
 interface Registry {
   slug: string
@@ -11,27 +11,10 @@ interface Registry {
   links?: { label: string; url: string; image?: string }[]
 }
 
-async function loadRegistries(): Promise<Registry[]> {
-  const file = path.join(process.cwd(), 'config', 'notebooks.json')
-  try {
-    const data = fs.readFileSync(file, 'utf-8')
-    return JSON.parse(data)
-  } catch (e) {
-    return []
-  }
-}
-
-export const metadata = {
-  title: 'eHealth Portal',
-  description: 'Головна сторінка порталу eHealth'
-}
-
-export default async function HomePage() {
-  // Static export: server request context (cookies) is unavailable at build time,
-  // so we render the default locale. Client components switch language at runtime.
-  const locale = 'uk'
-  const t = await getTranslations(locale)
-  const registries = await loadRegistries()
+export default function HomePage() {
+  // Client-side i18n so the language switch applies to this page too.
+  const { t } = useTranslations()
+  const registries = notebooks as Registry[]
 
   // Function to get translated registry title
   const getRegistryTitle = (registry: Registry) => {
